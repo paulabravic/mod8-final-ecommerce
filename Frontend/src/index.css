@@ -1,0 +1,81 @@
+li {
+  list-style: none;
+}
+
+.notFound {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../assets/perrito.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.volver-inicio {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 30px;
+  color: #fff;
+}
+
+.estilos {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar {
+  background: #17a2b8;
+}
+
+.logo-nombre {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.logo-nombre:hover {
+  color: rgb(207, 207, 207);
+}
+
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../assets/Header.jpg");
+  background-size: cover;
+  height: 40vh;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h6 {
+  font-size: 20px;
+}
+
+.img-pizza-mini {
+  width: 80px;
+  height: 53px;
+}
+
+.div-carrito {
+  background-color: #F8F9FA;
+  border: 1px solid #e9e8e8;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+}
+
+.div-carrito-interno {
+  background-color: white;
+  padding: 20px;
+}
+
+.div-carrito-pizza {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.div-carrito-precio {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
