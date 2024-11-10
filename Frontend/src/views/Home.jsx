@@ -1,16 +1,16 @@
 import Card from "../components/Card";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
-import PizzasList from "../components/PizzasList";
+import CollaresList from "../components/CollaresList";
 
 const Home = () => {
   return (
     <>
       <Navbar />
       <Header />
-      <PizzasList>
+      <CollaresList>
         <Card />
-      </PizzasList>
+      </CollaresList>
     </>
   );
 };

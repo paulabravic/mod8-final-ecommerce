@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { PizzasContext } from "../context/PizzaProvider";
+import { CollaresContext } from "../context/CollaresProvider";
 import { formatoNumero } from "../formatoNumero";
 
 const Navbar = () => {
 
-  const { total } = useContext(PizzasContext);
+  const { total } = useContext(CollaresContext);
 
   return (
     <div className="navbar text-white py-3">

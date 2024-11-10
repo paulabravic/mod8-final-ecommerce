@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { PizzasContext } from '../context/PizzaProvider';
+import { CollaresContext } from '../context/CollaresProvider';
 import Navbar from '../components/Navbar';
 import { formatoNumero } from '../formatoNumero';
 
 export const Carrito = () => {
 
-    const { carrito, total, addCarrito, subtractCarrito } = useContext(PizzasContext);
+    const { carrito, total, addCarrito, subtractCarrito } = useContext(CollaresContext);
 
     return (
         <>
@@ -16,8 +16,8 @@ export const Carrito = () => {
                     {carrito.map((cart) => (
                         <div key={cart.id}>
                             <div className="d-flex justify-content-between align-items-center">
-                                <div className='div-carrito-pizza'>
-                                    <img src={cart.img} alt={cart.name} className="img-pizza-mini" />
+                                <div className='div-carrito-collar'>
+                                    <img src={cart.img} alt={cart.name} className="img-collar-mini" />
                                     <span className='text-capitalize'>{cart.name}</span>
                                 </div>
                                 <div className='div-carrito-precio'>

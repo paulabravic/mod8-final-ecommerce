@@ -51,7 +51,7 @@ h6 {
   font-size: 20px;
 }
 
-.img-pizza-mini {
+.img-collar-mini {
   width: 80px;
   height: 53px;
 }
@@ -68,7 +68,7 @@ h6 {
   padding: 20px;
 }
 
-.div-carrito-pizza {
+.div-carrito-collar {
   display: flex;
   align-items: center;
   gap: 10px;

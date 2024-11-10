@@ -4,14 +4,14 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
-import PizzasProvider from "./context/PizzaProvider";
+import CollaresProvider from "./context/CollaresProvider";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter basename="/collares-bruno">
-      <PizzasProvider>
+      <CollaresProvider>
         <App />
-      </PizzasProvider>
+      </CollaresProvider>
     </BrowserRouter>
   </React.StrictMode>
 );

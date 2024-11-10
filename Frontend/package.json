@@ -1,8 +1,8 @@
 {
-  "name": "vite-ejemplo3",
+  "name": "ecommerce",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://paulabravic.github.io/mod5-react2-pfinal-pizza",
+  "homepage": "",
   "type": "module",
   "scripts": {
     "dev": "vite",
