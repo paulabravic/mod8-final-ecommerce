@@ -16,9 +16,23 @@ const Navbar = () => {
             <h4 className="mb-0">&#128021; Collares Bruno!</h4>
           </Link>
 
-          <Link to="/carrito" className="logo-nombre mx-1 mb-0">
-            <h4 className="mb-0">&#128722; Total ${formatoNumero(total)}</h4>
-          </Link>
+          <div className="d-flex align-items-center">
+            <Link to="/login" className="logo-nombre mx-1 mb-0">
+              <h6 className="mb-0 h6-menu">Iniciar Sesión</h6>
+            </Link>
+
+            <h6 className="mb-0 h6-menu">|</h6>
+
+            <Link to="/registro" className="logo-nombre mx-1 mb-0">
+              <h6 className="mb-0 h6-menu">Registrarse</h6>
+            </Link>
+
+            <h6 className="mb-0 h6-menu">|</h6>
+            
+            <Link to="/carrito" className="logo-nombre mx-1 mb-0">
+              <h6 className="mb-0 h6-menu">&#128722; Total ${formatoNumero(total)}</h6>
+            </Link>
+          </div>
 
         </div>
       </div>
