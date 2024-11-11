@@ -37,10 +37,10 @@ li {
 }
 
 .header {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),
     url("../../assets/Header.jpg");
   background-size: cover;
-  height: 40vh;
+  height: 60vh;
 }
 
 h1 {
@@ -49,6 +49,21 @@ h1 {
 
 h6 {
   font-size: 20px;
+}
+
+.h1-home {
+  font-size: 50px;
+  text-shadow: 1px 1px 0 #524f4f61, -1px -1px 0 #524f4f61, 1px -1px 0 #524f4f61, -1px 1px 0 #524f4f61;
+}
+
+.h6-home {
+  font-size: 20px;
+  text-shadow: 1px 1px 0 #524f4f61, -1px -1px 0 #524f4f61, 1px -1px 0 #524f4f61, -1px 1px 0 #524f4f61;
+}
+
+
+.h6-menu {
+  font-size: medium;
 }
 
 .img-collar-mini {
