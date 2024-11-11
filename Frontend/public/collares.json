@@ -2,65 +2,65 @@
     {
       "desc": "La pizza napolitana, de masa tierna y delgada pero bordes altos, es la versión propia de la cocina napolitana de la pizza redonda. El término pizza napoletana, por su importancia histórica o regional, se emplea en algunas zonas como sinónimo de pizza tonda.",
       "id": "P001",
-      "img": "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-1239077_640_cl.jpg?alt=media&token=6a9a33da-5c00-49d4-9080-784dcc87ec2c",
-      "ingredients": ["mozzarella", "tomates", "jamón", "orégano"],
-      "name": "Guerrero",
-      "price": 5950
+      "img": "/assets/img-cards/collar-perro-metal-azul-cielo.jpg",
+      "ingredients": ["Nylon resistente", "Ajustable", "Colores vibrantes", "Tamaño S y M"],
+      "name": "Belanova",
+      "price": 15950
     },
     {
       "desc": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con salsa de tomate, queso y otros muchos ingredientes, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.",
       "id": "P002",
-      "img": "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fcheese-164872_640_com.jpg?alt=media&token=18b2b821-4d0d-43f2-a1c6-8c57bc388fab",
-      "ingredients": ["mozzarella", "tomates", "jamón", "choricillo"],
-      "name": "Aventurero",
-      "price": 7250
+      "img": "/assets/img-cards/collar-perro-metal-dorado.jpg",
+      "ingredients": ["Acolchado", "Resistente al agua", "Flexible", "Ideal para clima frío"],
+      "name": "Winter",
+      "price": 12250
     },
     {
       "desc": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con salsa de tomate, queso y otros muchos ingredientes, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.",
       "id": "P003",
-      "img": "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-1239077_640_com.jpg?alt=media&token=e7cde87a-08d5-4040-ac54-90f6c31eb3e3",
-      "ingredients": ["mozzarella", "tomates", "salame", "orégano"],
-      "name": "Veloz",
-      "price": 5990
+      "img": "/assets/img-cards/collar-perro-moni-beige.jpg",
+      "ingredients": ["Cuero de alta calidad", "Robusto", "Duradero", "Diseño elegante"],
+      "name": "Luna",
+      "price": 13990
     },
     {
       "desc": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con salsa de tomate, queso y otros muchos ingredientes, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.",
       "id": "P004",
-      "img": "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-2000595_640_c.jpg?alt=media&token=61325b6e-a1e0-441e-b3b5-7335ba13e8be",
-      "ingredients": ["mozzarella", "salame", "aceitunas", "champiñones"],
+      "img": "/assets/img-cards/collar-perro-moni-gris.jpg",
+      "ingredients": ["Suave", "Con cristales", "Para perros pequeños", "Colores pastel"],
       "name": "Titán",
-      "price": 9590
+      "price": 12590
     },
     {
       "desc": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con salsa de tomate, queso y otros muchos ingredientes, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.",
       "id": "P005",
-      "img": "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-salame.jpg?alt=media&token=ab3d4bf8-01f2-4810-982b-bd7fb6b517b2",
-      "ingredients": ["mozzarella", "tomates cherry", "bacon", "orégano"],
+      "img": "/assets/img-cards/collar-perro-moni-rosa.jpg",
+      "ingredients": ["Reflectante", "Ajustable", "Resistente", "Para perros activos"],
       "name": "Golden",
-      "price": 6450
+      "price": 16450
     },
     {
       "desc": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con salsa de tomate, queso y otros muchos ingredientes, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.",
       "id": "P006",
-      "img": "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-2000595_640_c.jpg?alt=media&token=61325b6e-a1e0-441e-b3b5-7335ba13e8be",
-      "ingredients": ["mozzarella", "pimientos", "pollo grillé", "orégano"],
-      "name": "Superior",
-      "price": 8500
+      "img": "/assets/img-cards/collar-perro-nara-azul.jpg",
+      "ingredients": ["Moderno", "Acolchado", "Cómodo", "Tamaño M y L"],
+      "name": "Simba",
+      "price": 15500
     },
     {
       "desc": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con salsa de tomate, queso y otros muchos ingredientes, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.",
       "id": "P007",
-      "img": "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fcheese-164872_640_com.jpg?alt=media&token=18b2b821-4d0d-43f2-a1c6-8c57bc388fab",
-      "ingredients": ["piña", "jamón", "tomate", "mozzarella"],
-      "name": "Power",
-      "price": 7950
+      "img": "/assets/img-cards/collar-perro-nara-lila-.jpg",
+      "ingredients": ["Alta resistencia", "Para perros grandes", "Cierre de seguridad", "Colores oscuros"],
+      "name": "Nova",
+      "price": 12950
     },
     {
       "desc": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con salsa de tomate, queso y otros muchos ingredientes, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.",
       "id": "P008",
-      "img": "https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-1239077_640_cl.jpg?alt=media&token=6a9a33da-5c00-49d4-9080-784dcc87ec2c",
-      "ingredients": ["mozzarella", "orégano", "pepperoni", "tomate"],
-      "name": "Ladrador",
+      "img": "/assets/img-cards/collar-perro-metal-rosa-.jpg",
+      "ingredients": ["Suave", "Ligero", "Ajustable", "Diseño divertido"],
+      "name": "Labrador",
       "price": 6890
     }
   ]

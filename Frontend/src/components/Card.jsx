@@ -13,17 +13,17 @@ const Card = () => {
       {collares.map((collar) => (
         <div key={collar.id} className="col">
           <div className="card">
-            <img className="card-img-top" src={collar.img} alt="" />
+            <img className="card-img-top" src={collar.img} alt="" width={260} height={180} />
             <div className="card-body">
               <h4 className="card-title text-capitalize">Collar {collar.name}</h4>
               <hr />
               <p className="card-text">
-                <b>Ingredientes:</b>
+                <b>Características:</b>
               </p>
 
               <ul>
                 {collar.ingredients.map((ingredient, i) => (
-                  <li key={i}>&#127829; {ingredient}</li>
+                  <li key={i}>&#x1F9B4; {ingredient}</li>
                 ))}
               </ul>
             </div>
