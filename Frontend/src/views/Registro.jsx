@@ -56,11 +56,10 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'flex-start',
     height: '100vh',
-    backgroundColor: '#fff', // color de fondo verde
     marginTop: '80px',
   },
   formContainer: {
-    backgroundColor: '#1E7D3A',
+    backgroundColor: '#34acdb',
     padding: '20px',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
@@ -101,7 +100,7 @@ const styles = {
   registerButton: {
     padding: '10px 20px',
     fontSize: '16px',
-    backgroundColor: '#F0A500', // botón amarillo
+    backgroundColor: '#d6526b',
     color: 'white',
     border: 'none',
     borderRadius: '4px',

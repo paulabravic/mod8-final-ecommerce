@@ -1,66 +1,66 @@
 [
-    {
-      "desc": "La pizza napolitana, de masa tierna y delgada pero bordes altos, es la versión propia de la cocina napolitana de la pizza redonda. El término pizza napoletana, por su importancia histórica o regional, se emplea en algunas zonas como sinónimo de pizza tonda.",
-      "id": "P001",
-      "img": "/assets/img-cards/collar-perro-metal-azul-cielo.jpg",
-      "ingredients": ["Nylon resistente", "Ajustable", "Colores vibrantes", "Tamaño S y M"],
-      "name": "Belanova",
-      "price": 15950
-    },
-    {
-      "desc": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con salsa de tomate, queso y otros muchos ingredientes, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.",
-      "id": "P002",
-      "img": "/assets/img-cards/collar-perro-metal-dorado.jpg",
-      "ingredients": ["Acolchado", "Resistente al agua", "Flexible", "Ideal para clima frío"],
-      "name": "Winter",
-      "price": 12250
-    },
-    {
-      "desc": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con salsa de tomate, queso y otros muchos ingredientes, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.",
-      "id": "P003",
-      "img": "/assets/img-cards/collar-perro-moni-beige.jpg",
-      "ingredients": ["Cuero de alta calidad", "Robusto", "Duradero", "Diseño elegante"],
-      "name": "Luna",
-      "price": 13990
-    },
-    {
-      "desc": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con salsa de tomate, queso y otros muchos ingredientes, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.",
-      "id": "P004",
-      "img": "/assets/img-cards/collar-perro-moni-gris.jpg",
-      "ingredients": ["Suave", "Con cristales", "Para perros pequeños", "Colores pastel"],
-      "name": "Titán",
-      "price": 12590
-    },
-    {
-      "desc": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con salsa de tomate, queso y otros muchos ingredientes, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.",
-      "id": "P005",
-      "img": "/assets/img-cards/collar-perro-moni-rosa.jpg",
-      "ingredients": ["Reflectante", "Ajustable", "Resistente", "Para perros activos"],
-      "name": "Golden",
-      "price": 16450
-    },
-    {
-      "desc": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con salsa de tomate, queso y otros muchos ingredientes, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.",
-      "id": "P006",
-      "img": "/assets/img-cards/collar-perro-nara-azul.jpg",
-      "ingredients": ["Moderno", "Acolchado", "Cómodo", "Tamaño M y L"],
-      "name": "Simba",
-      "price": 15500
-    },
-    {
-      "desc": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con salsa de tomate, queso y otros muchos ingredientes, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.",
-      "id": "P007",
-      "img": "/assets/img-cards/collar-perro-nara-lila-.jpg",
-      "ingredients": ["Alta resistencia", "Para perros grandes", "Cierre de seguridad", "Colores oscuros"],
-      "name": "Nova",
-      "price": 12950
-    },
-    {
-      "desc": "La pizza es una preparación culinaria que consiste en un pan plano, habitualmente de forma circular, elaborado con harina de trigo, levadura, agua y sal (a veces aceite de oliva) que comúnmente se cubre con salsa de tomate, queso y otros muchos ingredientes, y que se hornea a alta temperatura, tradicionalmente en un horno de leña.",
-      "id": "P008",
-      "img": "/assets/img-cards/collar-perro-metal-rosa-.jpg",
-      "ingredients": ["Suave", "Ligero", "Ajustable", "Diseño divertido"],
-      "name": "Labrador",
-      "price": 6890
-    }
-  ]
+  {
+    "desc": "Collar de nylon resistente, ajustable, disponible en colores vibrantes. Ideal para perros pequeños y medianos.",
+    "id": "P001",
+    "img": "/assets/img-cards/collar-perro-metal-azul-cielo.jpg",
+    "ingredients": ["Nylon resistente", "Ajustable", "Colores vibrantes", "Tamaño S y M"],
+    "name": "Belanova",
+    "price": 15950
+  },
+  {
+    "desc": "Collar acolchado, resistente al agua, flexible y perfecto para mantener a tu perro cómodo en climas fríos.",
+    "id": "P002",
+    "img": "/assets/img-cards/collar-perro-metal-dorado.jpg",
+    "ingredients": ["Acolchado", "Resistente al agua", "Flexible", "Ideal para clima frío"],
+    "name": "Winter",
+    "price": 12250
+  },
+  {
+    "desc": "Elegante collar de cuero de alta calidad, robusto y duradero, ideal para perros que necesitan un toque de estilo.",
+    "id": "P003",
+    "img": "/assets/img-cards/collar-perro-moni-beige.jpg",
+    "ingredients": ["Cuero de alta calidad", "Robusto", "Duradero", "Diseño elegante"],
+    "name": "Luna",
+    "price": 13990
+  },
+  {
+    "desc": "Collar suave con cristales brillantes, perfecto para perros pequeños, disponible en colores pastel.",
+    "id": "P004",
+    "img": "/assets/img-cards/collar-perro-moni-gris.jpg",
+    "ingredients": ["Suave", "Con cristales", "Para perros pequeños", "Colores pastel"],
+    "name": "Titán",
+    "price": 12590
+  },
+  {
+    "desc": "Collar reflectante y ajustable, resistente y ideal para perros activos que disfrutan de la aventura.",
+    "id": "P005",
+    "img": "/assets/img-cards/collar-perro-moni-rosa.jpg",
+    "ingredients": ["Reflectante", "Ajustable", "Resistente", "Para perros activos"],
+    "name": "Golden",
+    "price": 16450
+  },
+  {
+    "desc": "Moderno y acolchado collar para perros de tamaño mediano y grande, cómodo para el uso diario.",
+    "id": "P006",
+    "img": "/assets/img-cards/collar-perro-nara-azul.jpg",
+    "ingredients": ["Moderno", "Acolchado", "Cómodo", "Tamaño M y L"],
+    "name": "Simba",
+    "price": 15500
+  },
+  {
+    "desc": "Collar de alta resistencia para perros grandes, con cierre de seguridad y colores oscuros.",
+    "id": "P007",
+    "img": "/assets/img-cards/collar-perro-nara-lila-.jpg",
+    "ingredients": ["Alta resistencia", "Para perros grandes", "Cierre de seguridad", "Colores oscuros"],
+    "name": "Nova",
+    "price": 12950
+  },
+  {
+    "desc": "Collar suave y ligero, ajustable, con un diseño divertido para perros de todos los tamaños.",
+    "id": "P008",
+    "img": "/assets/img-cards/collar-perro-metal-rosa-.jpg",
+    "ingredients": ["Suave", "Ligero", "Ajustable", "Diseño divertido"],
+    "name": "Labrador",
+    "price": 6890
+  }
+]

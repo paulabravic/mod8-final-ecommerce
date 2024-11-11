@@ -48,11 +48,10 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'flex-start',
     height: '100vh',
-    backgroundColor: '#fff', // color de fondo amarillo
     marginTop: '80px',
   },
   formContainer: {
-    backgroundColor: '#F0A500',
+    backgroundColor: '#d6526b',
     padding: '20px',
     borderRadius: '8px',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
@@ -92,7 +91,7 @@ const styles = {
   loginButton: {
     padding: '10px 20px',
     fontSize: '16px',
-    backgroundColor: '#28a745', // botón verde
+    backgroundColor: '#111e49', // botón verde
     color: 'white',
     border: 'none',
     borderRadius: '4px',

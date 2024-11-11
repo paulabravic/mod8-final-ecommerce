@@ -9,6 +9,10 @@ li {
   height: 100vh;
 }
 
+.fondo-color {
+  background-color: #efeeed;
+}
+
 .volver-inicio {
   text-decoration: none;
   font-weight: bold;
@@ -22,7 +26,7 @@ li {
 }
 
 .navbar {
-  background: #17a2b8;
+  background: #111e49;
 }
 
 .logo-nombre {
@@ -93,4 +97,12 @@ h6 {
   display: flex;
   align-items: center;
   gap: 7px;
+}
+
+.btn-ver-mas {
+  background-color: #34acdb;
+}
+
+.btn-comprar {
+  background-color: #d6526b;
 }

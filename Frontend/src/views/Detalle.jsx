@@ -40,14 +40,14 @@ const Detalle = () => {
                 </h4>
                 <hr />
                 <p className="card-text">{collarDetail.desc}</p>
-                <h6>Ingredientes:</h6>
+                <h6>Características:</h6>
                 <ul>
                   {collarDetail.ingredients?.map((ingredient, i) => (
-                    <li key={i}>&#127829; {ingredient}</li>
+                    <li key={i}>&#x1F9B4; {ingredient}</li>
                   ))}
                 </ul>
                 <div className="d-flex justify-content-around">
-                  <h3>Precio: ${collarDetail.price}</h3>
+                  <h4>Precio: ${collarDetail.price}</h4>
                   <button
                     className="btn btn-danger"
                     onClick={() => {

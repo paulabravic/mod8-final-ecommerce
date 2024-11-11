@@ -30,9 +30,9 @@ const Card = () => {
             
             <hr />
 
-            <h2 className="text-center text-dark pb-3">
+            <h4 className="text-center text-dark pb-3">
               Precio: ${formatoNumero(collar.price)}
-            </h2>
+            </h4>
 
             <div className="d-flex justify-content-around mb-4">
               <button
@@ -40,14 +40,14 @@ const Card = () => {
                 className="btn btn-info text-white"
                 onClick={() => navigate(`/producto/${collar.id}`)}
               >
-                Ver Más &#128064;
+                Ver Más
               </button>
 
               <button className="btn btn-danger" onClick={() => {
                 addCarrito(collar.id, collar.name, collar.price, collar.img,true);
                 navigate(`/carrito`);
               }} >
-                Añadir &#128722;
+                Comprar
               </button>
             </div>
           </div>
