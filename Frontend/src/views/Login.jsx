@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
+import '../index.css'; 
 
 export const Login = () => {
 
@@ -8,104 +9,37 @@ export const Login = () => {
 
   return (
     <>
-    <Navbar />
-    <div style={styles.container}>
-      <div style={styles.formContainer}>
-        <h1 style={styles.title}>Iniciar sesión</h1>
-        <form style={styles.form}>
-          <label style={styles.label} htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="nombre@ejemplo.com"
-            style={styles.input}
-          />
-          
-          <label style={styles.label} htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="******"
-            style={styles.input}
-          />
+      <Navbar />
+      <div className="login_container">
+        <div className="login_formContainer">
+          <h1 className="login_title">Iniciar sesión</h1>
+          <form className="login_form">
+            <label className="login_label" htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="nombre@ejemplo.com"
+              className="login_input"
+            />
 
-          <div style={styles.buttonContainer}>
-            <button type="submit" style={styles.loginButton}>Iniciar Sesión</button>
-            <button type="button" style={styles.backButton} 
-                    onClick={() => {navigate(`/registro`);}}>
-                Registrarse</button>
-          </div>
-        </form>
+            <label className="login_label" htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="******"
+              className="login_input"
+            />
+
+            <div className="login_buttonContainer">
+              <button type="submit" className="login_loginButton">Iniciar Sesión</button>
+              <button type="button" className="login_backButton" 
+                      onClick={() => { navigate(`/registro`); }}>
+                Registrarse
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
     </>
   );
 };
-
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-    height: '100vh',
-    marginTop: '80px',
-  },
-  formContainer: {
-    backgroundColor: '#d6526b',
-    padding: '20px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    width: '400px',
-    textAlign: 'center',
-  },
-  title: {
-    marginBottom: '10px',
-    fontSize: '24px',
-    fontWeight: 'bold',
-  },
-  subtitle: {
-    marginBottom: '20px',
-    fontSize: '18px',
-    color: '#666',
-  },
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  label: {
-    marginBottom: '5px',
-    textAlign: 'left',
-    fontSize: '14px',
-  },
-  input: {
-    padding: '10px',
-    fontSize: '16px',
-    marginBottom: '15px',
-    borderRadius: '4px',
-    border: '1px solid #ccc',
-  },
-  buttonContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  loginButton: {
-    padding: '10px 20px',
-    fontSize: '16px',
-    backgroundColor: '#111e49', // botón verde
-    color: 'white',
-    border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer',
-  },
-  backButton: {
-    padding: '10px 20px',
-    fontSize: '16px',
-    backgroundColor: '#ddd', // botón gris para volver
-    color: '#333',
-    border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer',
-  }
-};
-
-

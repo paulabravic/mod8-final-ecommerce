@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
+import '../index.css'; 
 
 export const Registro = () => {
 
@@ -8,112 +9,45 @@ export const Registro = () => {
 
   return (
     <>
-    <Navbar />
-    <div style={styles.container}>
-      <div style={styles.formContainer}>
-        <h1 style={styles.title}>Registrarse</h1>
-        <form style={styles.form}>
-          <label style={styles.label} htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="nombre@ejemplo.com"
-            style={styles.input}
-          />
+      <Navbar />
+      <div className="registro_container">
+        <div className="registro_formContainer">
+          <h1 className="registro_title">Registrarse</h1>
+          <form className="registro_form">
+            <label className="registro_label" htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="nombre@ejemplo.com"
+              className="registro_input"
+            />
 
-          <label style={styles.label} htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="******"
-            style={styles.input}
-          />
+            <label className="registro_label" htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="******"
+              className="registro_input"
+            />
 
-          <label style={styles.label} htmlFor="avatar">Avatar URL</label>
-          <input
-            type="text"
-            id="avatar"
-            placeholder="URL del avatar"
-            style={styles.input}
-          />
+            <label className="registro_label" htmlFor="avatar">Avatar URL</label>
+            <input
+              type="text"
+              id="avatar"
+              placeholder="URL del avatar"
+              className="registro_input"
+            />
 
-          <div style={styles.buttonContainer}>
-            <button type="submit" style={styles.registerButton}>Registrarme</button>
-            <button type="button" style={styles.backButton}
-                onClick={() => {navigate(`/login`);}}>
-                Login</button>
-          </div>
-        </form>
+            <div className="registro_buttonContainer">
+              <button type="submit" className="registro_registerButton">Registrarme</button>
+              <button type="button" className="registro_backButton"
+                      onClick={() => { navigate(`/login`); }}>
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
-  </>
+    </>
   );
 };
-
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'flex-start',
-    height: '100vh',
-    marginTop: '80px',
-  },
-  formContainer: {
-    backgroundColor: '#34acdb',
-    padding: '20px',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    width: '400px',
-    textAlign: 'center',
-    color: '#fff',
-  },
-  title: {
-    marginBottom: '10px',
-    fontSize: '24px',
-    fontWeight: 'bold',
-  },
-  subtitle: {
-    marginBottom: '20px',
-    fontSize: '18px',
-    color: '#666',
-  },
-  form: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  label: {
-    marginBottom: '5px',
-    textAlign: 'left',
-    fontSize: '14px',
-  },
-  input: {
-    padding: '10px',
-    fontSize: '16px',
-    marginBottom: '15px',
-    borderRadius: '4px',
-    border: '1px solid #ccc',
-  },
-  buttonContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  registerButton: {
-    padding: '10px 20px',
-    fontSize: '16px',
-    backgroundColor: '#d6526b',
-    color: 'white',
-    border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer',
-  },
-  backButton: {
-    padding: '10px 20px',
-    fontSize: '16px',
-    backgroundColor: '#ddd', // botón gris para volver
-    color: '#333',
-    border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer',
-  }
-};
-

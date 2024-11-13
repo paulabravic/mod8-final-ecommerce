@@ -106,3 +106,164 @@ h6 {
 .btn-comprar {
   background-color: #d6526b;
 }
+
+
+
+/************************************************/
+/**                   LOGIN                    **/
+/************************************************/
+.login_container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin-top: 80px;
+}
+
+.login_formContainer {
+  background-color: #d6526b;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+}
+
+.login_title {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.login_subtitle {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #666;
+}
+
+.login_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login_label {
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.login_input {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.login_buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login_loginButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #111e49; /* botón verde */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login_backButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ddd; /* botón gris para volver */
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+
+
+/************************************************/
+/**                REGISTRO                    **/
+/************************************************/
+.registro_container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin-top: 80px;
+}
+
+.registro_formContainer {
+  background-color: #34acdb;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+  color: #fff;
+}
+
+.registro_title {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.registro_subtitle {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #666;
+}
+
+.registro_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.registro_label {
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.registro_input {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.registro_buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.registro_registerButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #d6526b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.registro_backButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ddd; /* botón gris para volver */
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
