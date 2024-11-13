@@ -38,7 +38,7 @@ export const Carrito = () => {
                     ) : null}
 
                     <h4 className='fw-bold py-3'>Total ${formatoNumero(total)}</h4>
-                    <button className='btn btn-success' onClick={() => alert('¡Gracias por preferirnos!')}>Ir a Pagar</button>
+                    <button className='btn btn-success' onClick={() => alert('¡Gracias por preferirnos! :)')}>Ir a Pagar</button>
                 </div>
             </div>
         </>
