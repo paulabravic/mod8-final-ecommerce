@@ -29,6 +29,10 @@ li {
   background: #111e49;
 }
 
+.footer {
+  background: #111e49;
+}
+
 .logo-nombre {
   color: #fff;
   font-weight: bold;
@@ -181,7 +185,8 @@ h6 {
 .login_loginButton {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #111e49; /* botón verde */
+  background-color: #111e49;
+  /* botón verde */
   color: white;
   border: none;
   border-radius: 4px;
@@ -191,7 +196,8 @@ h6 {
 .login_backButton {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #ddd; /* botón gris para volver */
+  background-color: #ddd;
+  /* botón gris para volver */
   color: #333;
   border: none;
   border-radius: 4px;
@@ -272,7 +278,8 @@ h6 {
 .registro_backButton {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #ddd; /* botón gris para volver */
+  background-color: #ddd;
+  /* botón gris para volver */
   color: #333;
   border: none;
   border-radius: 4px;
@@ -289,20 +296,25 @@ h6 {
 
 /* AdminView.css */
 .admin_container {
-  background-color: #ffffff; /* Fondo blanco limpio */
-  color: #2e2e3a; /* Texto en gris oscuro */
+  background-color: #ffffff;
+  /* Fondo blanco limpio */
+  color: #2e2e3a;
+  /* Texto en gris oscuro */
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para elegancia */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra suave para elegancia */
 }
 
 .admin_container h1 {
-  color: #d6526b; /* Título en rosa oscuro para destacar */
+  color: #d6526b;
+  /* Título en rosa oscuro para destacar */
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-.admin_product_form input, .admin_product_form button {
+.admin_product_form input,
+.admin_product_form button {
   width: 100%;
   padding: 12px;
   margin: 12px 0;
@@ -312,21 +324,27 @@ h6 {
 }
 
 .admin_product_form input {
-  background-color: #f9f9f9; /* Fondo suave para los inputs */
-  color: #2e2e3a; /* Texto oscuro en inputs */
+  background-color: #f9f9f9;
+  /* Fondo suave para los inputs */
+  color: #2e2e3a;
+  /* Texto oscuro en inputs */
 }
 
 .admin_product_form button {
-  background-color: #f1be2c; /* Fondo del botón amarillo cálido */
-  color: #2e2e3a; /* Texto del botón en gris oscuro */
+  background-color: #f1be2c;
+  /* Fondo del botón amarillo cálido */
+  color: #2e2e3a;
+  /* Texto del botón en gris oscuro */
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .admin_product_form button:hover {
-  background-color: #34acdb; /* Cambio de color a azul brillante al pasar el mouse */
-  color: #ffffff; /* Texto blanco para contraste */
+  background-color: #34acdb;
+  /* Cambio de color a azul brillante al pasar el mouse */
+  color: #ffffff;
+  /* Texto blanco para contraste */
 }
 
 .admin_product_list table {
@@ -335,24 +353,31 @@ h6 {
   margin-top: 20px;
 }
 
-.admin_product_list th, .admin_product_list td {
+.admin_product_list th,
+.admin_product_list td {
   padding: 14px;
   text-align: left;
-  border-bottom: 1px solid #e0e0e0; /* Bordes suaves entre filas */
+  border-bottom: 1px solid #e0e0e0;
+  /* Bordes suaves entre filas */
 }
 
 .admin_product_list th {
-  background-color: #34acdb; /* Fondo azul brillante para los encabezados */
-  color: #ffffff; /* Texto blanco para contraste */
+  background-color: #34acdb;
+  /* Fondo azul brillante para los encabezados */
+  color: #ffffff;
+  /* Texto blanco para contraste */
 }
 
 .admin_product_list tr:nth-child(even) {
-  background-color: #f9f9f9; /* Color claro para filas pares */
+  background-color: #f9f9f9;
+  /* Color claro para filas pares */
 }
 
 .admin_product_list button {
-  background-color: #34acdb; /* Botones de acción en azul */
-  color: #ffffff; /* Texto blanco */
+  background-color: #34acdb;
+  /* Botones de acción en azul */
+  color: #ffffff;
+  /* Texto blanco */
   border: none;
   cursor: pointer;
   padding: 10px;
@@ -361,13 +386,16 @@ h6 {
 }
 
 .admin_product_list button:hover {
-  background-color: #2e2e3a; /* Botón oscuro al pasar el mouse */
+  background-color: #2e2e3a;
+  /* Botón oscuro al pasar el mouse */
 }
 
 .admin_product_list button:nth-child(2) {
-  background-color: #d6526b; /* Botón de eliminar en rosa oscuro */
+  background-color: #d6526b;
+  /* Botón de eliminar en rosa oscuro */
 }
 
 .admin_product_list button:nth-child(2):hover {
-  background-color: #a43f5e; /* Rosa oscuro más profundo al pasar el mouse */
+  background-color: #a43f5e;
+  /* Rosa oscuro más profundo al pasar el mouse */
 }
