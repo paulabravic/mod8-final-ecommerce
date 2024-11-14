@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
-import '../index.css'; 
+import "../index.css";
 
 export const Registro = () => {
-
   const navigate = useNavigate();
 
   const handleClickRegistro = (e) => {
-    e.preventDefault(); 
-    alert('Usuario registrado exitosamente!');
+    e.preventDefault();
+    alert("Usuario registrado exitosamente!");
     navigate(`/login`);
   };
 
@@ -20,7 +20,9 @@ export const Registro = () => {
         <div className="registro_formContainer">
           <h1 className="registro_title">Registrarse</h1>
           <form className="registro_form">
-            <label className="registro_label" htmlFor="email">Email</label>
+            <label className="registro_label" htmlFor="email">
+              Email
+            </label>
             <input
               type="email"
               id="email"
@@ -28,7 +30,9 @@ export const Registro = () => {
               className="registro_input"
             />
 
-            <label className="registro_label" htmlFor="password">Password</label>
+            <label className="registro_label" htmlFor="password">
+              Password
+            </label>
             <input
               type="password"
               id="password"
@@ -36,7 +40,9 @@ export const Registro = () => {
               className="registro_input"
             />
 
-            <label className="registro_label" htmlFor="avatar">Avatar URL</label>
+            <label className="registro_label" htmlFor="avatar">
+              Avatar URL
+            </label>
             <input
               type="text"
               id="avatar"
@@ -45,7 +51,13 @@ export const Registro = () => {
             />
 
             <div className="registro_buttonContainer">
-              <button type="submit" className="registro_registerButton" onClick={handleClickRegistro}>Registrarme</button>
+              <button
+                type="submit"
+                className="registro_registerButton"
+                onClick={handleClickRegistro}
+              >
+                Registrarme
+              </button>
               {/* <button type="button" className="registro_backButton"
                       onClick={() => { navigate(`/login`); }}>
                 Login
@@ -54,6 +66,7 @@ export const Registro = () => {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
