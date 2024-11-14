@@ -1,18 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { CollaresContext } from "../context/CollaresProvider";
-import '../index.css'; 
+import "../index.css";
 
 //setIsLoggedIn
 
 export const Login = () => {
-
   const { setIsLoggedIn } = useContext(CollaresContext);
   const navigate = useNavigate();
 
   const handleClickLogin = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     setIsLoggedIn(1);
     navigate(`/`);
   };
@@ -24,7 +24,9 @@ export const Login = () => {
         <div className="login_formContainer">
           <h1 className="login_title">Iniciar sesión</h1>
           <form className="login_form">
-            <label className="login_label" htmlFor="email">Email</label>
+            <label className="login_label" htmlFor="email">
+              Email
+            </label>
             <input
               type="email"
               id="email"
@@ -32,7 +34,9 @@ export const Login = () => {
               className="login_input"
             />
 
-            <label className="login_label" htmlFor="password">Password</label>
+            <label className="login_label" htmlFor="password">
+              Password
+            </label>
             <input
               type="password"
               id="password"
@@ -41,7 +45,13 @@ export const Login = () => {
             />
 
             <div className="login_buttonContainer">
-              <button type="submit" className="login_loginButton" onClick={handleClickLogin}>Iniciar Sesión</button>
+              <button
+                type="submit"
+                className="login_loginButton"
+                onClick={handleClickLogin}
+              >
+                Iniciar Sesión
+              </button>
               {/* <button type="button" className="login_backButton" 
                       onClick={() => { navigate(`/registro`); }}>
                 Registrarse
@@ -50,6 +60,7 @@ export const Login = () => {
           </form>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
