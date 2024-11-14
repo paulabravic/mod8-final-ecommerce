@@ -6,6 +6,7 @@ const CollaresProvider = ({ children }) => {
   const [collares, setCollares] = useState([]);
   const [carrito, setCarrito] = useState([]);
   const [total, setTotal] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(0);
 
   useEffect(() => {
     getCollares();
@@ -50,9 +51,12 @@ const CollaresProvider = ({ children }) => {
     setTotal(totalCarrito);
   }
 
+  // const setLoginOk = (loggedIn) => {
+  //   if(loggedIn > 0) 
+  // }
 
   return (
-    <CollaresContext.Provider value={{ collares, setCollares, carrito, setCarrito, total, setTotal, addCarrito, subtractCarrito }}>
+    <CollaresContext.Provider value={{ collares, setCollares, carrito, setCarrito, total, setTotal, addCarrito, subtractCarrito, isLoggedIn, setIsLoggedIn }}>
       {children}
     </CollaresContext.Provider>
   );

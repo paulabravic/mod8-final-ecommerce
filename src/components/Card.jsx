@@ -12,10 +12,10 @@ const Card = () => {
     <>
       {collares.map((collar) => (
         <div key={collar.id} className="col">
-          <div className="card">
+          <div className="card card-height-minimo">
             <img className="card-img-top" src={collar.img} alt="" width={260} height={180} />
             <div className="card-body">
-              <h4 className="card-title text-capitalize">Collar {collar.name}</h4>
+              <h4 className="card-title text-capitalize card-nowrap-h4">Collar {collar.name}</h4>
               <hr />
               <p className="card-text">
                 <b>Características:</b>
@@ -23,7 +23,7 @@ const Card = () => {
 
               <ul>
                 {collar.ingredients.map((ingredient, i) => (
-                  <li key={i}>&#x1F9B4; {ingredient}</li>
+                  <li className="card-nowrap-li" key={i}>&#x1F9B4; {ingredient}</li>
                 ))}
               </ul>
             </div>

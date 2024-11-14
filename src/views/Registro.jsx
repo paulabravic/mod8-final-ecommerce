@@ -7,6 +7,12 @@ export const Registro = () => {
 
   const navigate = useNavigate();
 
+  const handleClickRegistro = (e) => {
+    e.preventDefault(); 
+    alert('Usuario registrado exitosamente!');
+    navigate(`/login`);
+  };
+
   return (
     <>
       <Navbar />
@@ -39,11 +45,11 @@ export const Registro = () => {
             />
 
             <div className="registro_buttonContainer">
-              <button type="submit" className="registro_registerButton">Registrarme</button>
-              <button type="button" className="registro_backButton"
+              <button type="submit" className="registro_registerButton" onClick={handleClickRegistro}>Registrarme</button>
+              {/* <button type="button" className="registro_backButton"
                       onClick={() => { navigate(`/login`); }}>
                 Login
-              </button>
+              </button> */}
             </div>
           </form>
         </div>

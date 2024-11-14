@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Navbar from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
+import { CollaresContext } from "../context/CollaresProvider";
 import '../index.css'; 
+
+//setIsLoggedIn
 
 export const Login = () => {
 
+  const { setIsLoggedIn } = useContext(CollaresContext);
   const navigate = useNavigate();
+
+  const handleClickLogin = (e) => {
+    e.preventDefault(); 
+    setIsLoggedIn(1);
+    navigate(`/`);
+  };
 
   return (
     <>
@@ -31,11 +41,11 @@ export const Login = () => {
             />
 
             <div className="login_buttonContainer">
-              <button type="submit" className="login_loginButton">Iniciar Sesión</button>
-              <button type="button" className="login_backButton" 
+              <button type="submit" className="login_loginButton" onClick={handleClickLogin}>Iniciar Sesión</button>
+              {/* <button type="button" className="login_backButton" 
                       onClick={() => { navigate(`/registro`); }}>
                 Registrarse
-              </button>
+              </button> */}
             </div>
           </form>
         </div>
