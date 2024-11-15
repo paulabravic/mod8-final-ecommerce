@@ -11,7 +11,7 @@ export const Carrito = () => {
   return (
     <>
       <Navbar />
-      <div className="container mt-5 div-carrito">
+      <div className="container mt-5 div-carrito d-flex flex-column min-vh-100">
         <h3>Detalles del pedido:</h3>
         <div className="div-carrito-interno">
           {carrito.map((cart) => (
