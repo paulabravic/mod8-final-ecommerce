@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { CollaresContext } from "../context/CollaresProvider";
-import { formatoNumero } from "../formatoNumero.js";
+import { formatoNumero } from "../utils/formatoNumero.js";
 
 const Card = () => {
   const { collares, addCarrito } = useContext(CollaresContext);

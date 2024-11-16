@@ -104,6 +104,10 @@ h6 {
   gap: 7px;
 }
 
+.preview-carrito-total {
+  min-width: 135px;
+}
+
 .btn-ver-mas {
   background-color: #34acdb;
 }
@@ -285,6 +289,11 @@ h6 {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.registro_error {
+  color: red;
+  text-shadow: 1px 1px 0 #ddd, -1px -1px 0 #ddd, 1px -1px 0 #ddd, -1px 1px 0 #ddd;
 }
 
 

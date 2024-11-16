@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { CollaresContext } from "../context/CollaresProvider";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { formatoNumero } from "../formatoNumero";
+import { formatoNumero } from "../utils/formatoNumero";
 
 export const Carrito = () => {
   const { carrito, total, addCarrito, subtractCarrito } =

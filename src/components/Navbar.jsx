@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { CollaresContext } from "../context/CollaresProvider";
-import { formatoNumero } from "../formatoNumero";
+import { formatoNumero } from "../utils/formatoNumero";
 
 const Navbar = () => {
   const { total, isLoggedIn, setIsLoggedIn } = useContext(CollaresContext);
@@ -56,7 +56,7 @@ const Navbar = () => {
               <h6 className="mb-0 h6-menu">|</h6>
 
               <Link to="/carrito" className="logo-nombre mx-1 mb-0">
-                <h6 className="mb-0 h6-menu">
+                <h6 className="mb-0 h6-menu preview-carrito-total">
                   &#128722; Total ${formatoNumero(total)}
                 </h6>
               </Link>
