@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Titulo from "../components/Titulo";
+import Footer from "../components/Footer";
 import "../index.css";
 
 // Simulación de productos
@@ -144,6 +145,7 @@ function AdminProducto() {
           </table>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

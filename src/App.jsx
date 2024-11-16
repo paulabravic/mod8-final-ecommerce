@@ -6,6 +6,7 @@ import { Login } from "./views/Login.jsx";
 import { Registro } from "./views/Registro.jsx";
 import Favorito from "./views/Favorito.jsx";
 import MisCompras from "./views/MisCompras.jsx";
+import Perfil from "./views/Perfil.jsx";
 import AdminProducto from "./views/AdminProducto.jsx";
 import AdminPedido from "./views/AdminPedido.jsx";
 
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="admin-pedido" element={<AdminPedido />} />        
         <Route path="favorito" element={<Favorito />} />
         <Route path="mis-compras" element={<MisCompras />} />
+        <Route path="perfil" element={<Perfil />} />
         <Route path="/" element={<Home />} />
       </Routes>
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Titulo from "../components/Titulo";
+import Footer from "../components/Footer";
 import "../index.css";
 
 // Simulación de pedidos
@@ -81,6 +82,7 @@ function AdminPedido() {
           </table>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

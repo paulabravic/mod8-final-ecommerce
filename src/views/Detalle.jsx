@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { CollaresContext } from "../context/CollaresProvider";
 
 const Detalle = () => {
@@ -63,6 +64,7 @@ const Detalle = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

@@ -551,3 +551,64 @@ h6 {
   color: #777;
   width: 200px; 
 }
+
+
+
+
+
+/************************************************/
+/**                 MI PERFIL                  **/
+/************************************************/
+.perfil-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+.perfil-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.perfil-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.perfil-form-group {
+  margin-bottom: 15px;
+}
+
+.perfil-form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.perfil-form-group input, .perfil-form-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.perfil-form-group input:disabled {
+  background-color: #e9e9e9;
+}
+
+.perfil-save-button {
+  padding: 10px;
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.perfil-save-button:hover {
+  background-color: #138496;
+}
+
+

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Titulo from "../components/Titulo";
+import Footer from "../components/Footer";
 import "../index.css";
 
 // Simulación de compras (mock data)
@@ -101,6 +102,7 @@ function MisCompras() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

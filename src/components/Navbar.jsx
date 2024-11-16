@@ -49,7 +49,7 @@ const Navbar = () => {
             </div>
           ) : isLoggedIn === 2 ? (
             <div className="d-flex align-items-center">
-              <Link to="/favorito" className="logo-nombre mx-1 mb-0">
+              <Link to="/perfil" className="logo-nombre mx-1 mb-0">
                 <h6 className="mb-0 h6-menu">Mi Perfil</h6>
               </Link>
 
