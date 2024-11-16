@@ -21,10 +21,30 @@ const Navbar = () => {
             <h4 className="mb-0"><img src="/assets/Logos/logo_white.png" alt="Logo" width={32} /> Collares Bruno!</h4>
           </Link>
 
-          {isLoggedIn > 0 ? (
+          {isLoggedIn === 1 ? (
             <div className="d-flex align-items-center">
               <Link to="/admin" className="logo-nombre mx-1 mb-0">
                 <h6 className="mb-0 h6-menu">Administrar</h6>
+              </Link>
+
+              <h6 className="mb-0 h6-menu">|</h6>
+
+              <Link to="/" className="logo-nombre mx-1 mb-0" onClick={handleClickCerrarSesion}>
+                <h6 className="mb-0 h6-menu">Cerrar sesión</h6>
+              </Link>
+
+              <h6 className="mb-0 h6-menu">|</h6>
+
+              <Link to="/carrito" className="logo-nombre mx-1 mb-0">
+                <h6 className="mb-0 h6-menu">
+                  &#128722; Total ${formatoNumero(total)}
+                </h6>
+              </Link>
+            </div>
+          ) : isLoggedIn === 2 ? (
+            <div className="d-flex align-items-center">
+              <Link to="/admin" className="logo-nombre mx-1 mb-0">
+                <h6 className="mb-0 h6-menu">Favoritos</h6>
               </Link>
 
               <h6 className="mb-0 h6-menu">|</h6>

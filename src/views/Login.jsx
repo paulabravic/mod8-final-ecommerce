@@ -36,7 +36,7 @@ export const Login = () => {
     ) {
       //window.sessionStorage.setItem('token', data.token)
       window.alert("Usuario identificado con éxito 😀.");
-      setIsLoggedIn(1);
+      setIsLoggedIn(1); //Usuario Admin
       navigate(`/`);
 
       // axios
@@ -64,7 +64,7 @@ export const Login = () => {
       if (usuarioExistente) {
         //window.sessionStorage.setItem('token', data.token)
         window.alert("Usuario identificado con éxito 😀.");
-        setIsLoggedIn(1);
+        setIsLoggedIn(2); //Usuario normal
         navigate(`/`);
       } else {
         window.alert(`No existe usuario con el email y password ingresado 🙁.`);
