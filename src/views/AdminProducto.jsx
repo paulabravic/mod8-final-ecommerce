@@ -1,7 +1,8 @@
 // AdminView.jsx
 import React, { useState, useEffect } from "react";
-import "../index.css";
 import Navbar from "../components/Navbar";
+import Titulo from "../components/Titulo";
+import "../index.css";
 
 // Simulación de productos
 const mockData = [
@@ -31,7 +32,7 @@ const mockData = [
   },
 ];
 
-function Admin() {
+function AdminProducto() {
   const [products, setProducts] = useState(mockData);
   const [newProduct, setNewProduct] = useState({
     name: "",
@@ -68,10 +69,12 @@ function Admin() {
     <>
       <Navbar />
 
+      <Titulo titulo="Administrar Productos" />
+
       <div className="container admin_container">
-        <h1>Administrar Productos</h1>
+        {/* <h1>Administrar Productos</h1> */}
         <div className="admin_product_form">
-          <h3>{editMode ? "Editar Producto" : "Agregar Producto"}</h3>
+          <h5>{editMode ? "Editar Producto" : "Agregar Producto"}</h5>
           <input
             type="text"
             value={editMode ? editProduct.name : newProduct.name}
@@ -110,8 +113,8 @@ function Admin() {
           </button>
         </div>
 
-        <div className="admin_product_list">
-          <h3>Lista de Productos</h3>
+        <div className="admin_product_list mt-2">
+          <h5>Lista de Productos</h5>
           <table>
             <thead>
               <tr>
@@ -145,4 +148,4 @@ function Admin() {
   );
 }
 
-export default Admin;
+export default AdminProducto;

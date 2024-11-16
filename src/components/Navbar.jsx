@@ -23,8 +23,14 @@ const Navbar = () => {
 
           {isLoggedIn === 1 ? (
             <div className="d-flex align-items-center">
-              <Link to="/admin" className="logo-nombre mx-1 mb-0">
-                <h6 className="mb-0 h6-menu">Administrar</h6>
+              <Link to="/admin-pedido" className="logo-nombre mx-1 mb-0">
+                <h6 className="mb-0 h6-menu">Administrar Pedidos</h6>
+              </Link>
+
+              <h6 className="mb-0 h6-menu">|</h6>
+
+              <Link to="/admin-producto" className="logo-nombre mx-1 mb-0">
+                <h6 className="mb-0 h6-menu">Administrar Productos</h6>
               </Link>
 
               <h6 className="mb-0 h6-menu">|</h6>
@@ -43,7 +49,19 @@ const Navbar = () => {
             </div>
           ) : isLoggedIn === 2 ? (
             <div className="d-flex align-items-center">
-              <Link to="/admin" className="logo-nombre mx-1 mb-0">
+              <Link to="/favorito" className="logo-nombre mx-1 mb-0">
+                <h6 className="mb-0 h6-menu">Mi Perfil</h6>
+              </Link>
+
+              <h6 className="mb-0 h6-menu">|</h6>
+
+              <Link to="/mis-compras" className="logo-nombre mx-1 mb-0">
+                <h6 className="mb-0 h6-menu">Mis Compras</h6>
+              </Link>
+
+              <h6 className="mb-0 h6-menu">|</h6>
+
+              <Link to="/favorito" className="logo-nombre mx-1 mb-0">
                 <h6 className="mb-0 h6-menu">Favoritos</h6>
               </Link>
 

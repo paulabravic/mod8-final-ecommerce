@@ -301,7 +301,7 @@ h6 {
 
 
 /************************************************/
-/**                   ADMIN                    **/
+/**             ADMIN PRODUCTOS                **/
 /************************************************/
 
 /* AdminView.css */
@@ -318,7 +318,6 @@ h6 {
 
 .admin_container h1 {
   color: #d6526b;
-  /* Título en rosa oscuro para destacar */
   font-size: 24px;
   margin-bottom: 20px;
 }
@@ -335,16 +334,12 @@ h6 {
 
 .admin_product_form input {
   background-color: #f9f9f9;
-  /* Fondo suave para los inputs */
   color: #2e2e3a;
-  /* Texto oscuro en inputs */
 }
 
 .admin_product_form button {
   background-color: #f1be2c;
-  /* Fondo del botón amarillo cálido */
   color: #2e2e3a;
-  /* Texto del botón en gris oscuro */
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -352,9 +347,7 @@ h6 {
 
 .admin_product_form button:hover {
   background-color: #34acdb;
-  /* Cambio de color a azul brillante al pasar el mouse */
   color: #ffffff;
-  /* Texto blanco para contraste */
 }
 
 .admin_product_list table {
@@ -368,26 +361,20 @@ h6 {
   padding: 14px;
   text-align: left;
   border-bottom: 1px solid #e0e0e0;
-  /* Bordes suaves entre filas */
 }
 
 .admin_product_list th {
   background-color: #34acdb;
-  /* Fondo azul brillante para los encabezados */
   color: #ffffff;
-  /* Texto blanco para contraste */
 }
 
 .admin_product_list tr:nth-child(even) {
   background-color: #f9f9f9;
-  /* Color claro para filas pares */
 }
 
 .admin_product_list button {
   background-color: #34acdb;
-  /* Botones de acción en azul */
   color: #ffffff;
-  /* Texto blanco */
   border: none;
   cursor: pointer;
   padding: 10px;
@@ -397,15 +384,170 @@ h6 {
 
 .admin_product_list button:hover {
   background-color: #2e2e3a;
-  /* Botón oscuro al pasar el mouse */
 }
 
 .admin_product_list button:nth-child(2) {
   background-color: #d6526b;
-  /* Botón de eliminar en rosa oscuro */
 }
 
 .admin_product_list button:nth-child(2):hover {
   background-color: #a43f5e;
-  /* Rosa oscuro más profundo al pasar el mouse */
+}
+
+
+
+
+
+/************************************************/
+/**             ADMIN PEDIDOS                  **/
+/************************************************/
+
+.admin-pedido-container {
+  background-color: #ffffff;
+  color: #2e2e3a;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-pedido-container h1 {
+  color: #d6526b;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.admin-pedido-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-pedido-list th,
+.admin-pedido-list td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.admin-pedido-list th {
+  background-color: #34acdb;
+  color: #ffffff;
+}
+
+.admin-pedido-list tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.admin-pedido-select {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  color: #2e2e3a;
+}
+
+.admin-pedido-list button {
+  background-color: #34acdb;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.admin-pedido-list button:hover {
+  background-color: #2e2e3a;
+}
+
+.admin-pedido-list button:nth-child(2) {
+  background-color: #d6526b;
+}
+
+.admin-pedido-list button:nth-child(2):hover {
+  background-color: #a43f5e;
+}
+
+
+
+
+/************************************************/
+/**               MIS COMPRAS                  **/
+/************************************************/
+.mis-compras-container {
+  background-color: #ffffff;
+  color: #2e2e3a;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mis-compras-container h1 {
+  color: #d6526b;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.mis-compras-list h5 {
+  font-size: 20px;
+  color: #34acdb;
+  margin-bottom: 10px;
+}
+
+.mis-compras-items {
+  margin-top: 20px;
+}
+
+.mis-compras-pedido {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.mis-compras-pedido-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.mis-compras-pedido-id {
+  font-weight: bold;
+  color: #34acdb;
+}
+
+.mis-compras-pedido-total {
+  font-weight: bold;
+  color: #d6526b;
+}
+
+.mis-compras-productos {
+  margin-top: 10px;
+}
+
+.mis-compras-producto {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.mis-compras-producto:last-child {
+  border-bottom: none;
+}
+
+.mis-compras-producto-nombre {
+  font-weight: 600;
+  color: #2e2e3a;
+  flex: 1; 
+}
+
+.mis-compras-producto-cantidad,
+.mis-compras-producto-precio {
+  text-align: right; 
+  color: #777;
+  width: 200px; 
 }

@@ -4,8 +4,10 @@ import Home from "./views/Home.jsx";
 import { Carrito } from "./views/Carrito.jsx";
 import { Login } from "./views/Login.jsx";
 import { Registro } from "./views/Registro.jsx";
-import Admin from "./views/Admin.jsx";
-
+import Favorito from "./views/Favorito.jsx";
+import MisCompras from "./views/MisCompras.jsx";
+import AdminProducto from "./views/AdminProducto.jsx";
+import AdminPedido from "./views/AdminPedido.jsx";
 
 const App = () => {
   return (
@@ -18,7 +20,10 @@ const App = () => {
         <Route path="carrito" element={<Carrito />} />
         <Route path="login" element={<Login />} />
         <Route path="registro" element={<Registro />} />
-        <Route path="admin" element={<Admin />} />
+        <Route path="admin-producto" element={<AdminProducto />} />
+        <Route path="admin-pedido" element={<AdminPedido />} />        
+        <Route path="favorito" element={<Favorito />} />
+        <Route path="mis-compras" element={<MisCompras />} />
         <Route path="/" element={<Home />} />
       </Routes>
 

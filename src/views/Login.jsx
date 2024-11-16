@@ -37,7 +37,7 @@ export const Login = () => {
       //window.sessionStorage.setItem('token', data.token)
       window.alert("Usuario identificado con éxito 😀.");
       setIsLoggedIn(1); //Usuario Admin
-      navigate(`/`);
+      navigate(`/admin-producto`);
 
       // axios
       //   .post(ENDPOINT.login, modelLogin)
