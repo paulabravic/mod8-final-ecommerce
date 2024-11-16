@@ -4,13 +4,19 @@ import Titulo from "../components/Titulo";
 import Footer from "../components/Footer";
 import "../index.css";
 
-function UserProfile() {
+function Perfil() {
   const [user, setUser] = useState({
     name: "Juan Pérez",
     email: "juan.perez@example.com",
-    address: "Calle Falsa 123",
+    address: "Calle Alameda 123",
     city: "Santiago",
     country: "Chile",
+  });
+
+  const [password, setPassword] = useState({
+    currentPassword: "",
+    newPassword: "",
+    confirmPassword: ""
   });
 
   const handleInputChange = (e) => {
@@ -21,20 +27,40 @@ function UserProfile() {
     }));
   };
 
-  const handleSave = () => {
-    alert("Sus datos han sido actualizados!");
-    // Aquí puedes agregar la lógica para guardar los cambios
+  const handlePasswordChange = (e) => {
+    const { name, value } = e.target;
+    setPassword((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSaveProfile = () => {
+    alert("Cambios guardados");
+    // Aquí puedes agregar la lógica para guardar los cambios del perfil
+  };
+
+  const handleSavePassword = () => {
+    if (password.newPassword !== password.confirmPassword) {
+      alert("Las contraseñas no coinciden");
+    } else {
+      alert("Contraseña cambiada con éxito");
+      // Aquí agregarías la lógica para cambiar la contraseña
+    }
   };
 
   return (
-    <>
+      <>
       <Navbar />
       <Titulo titulo="Mi Perfil" />
-
-      <div className="perfil-container mb-5">
-        {/* <h2>Perfil de Usuario</h2> */}
+    <div className="perfil-container mb-5">
+      {/* <h2>Perfil de Usuario</h2> */}
+      <div className="perfil-content">
+        {/* Sección del perfil */}
+       
         <form className="perfil-form">
-          <div className="perfil-form-group">
+        <h5>Mis Datos</h5>
+          <div className="perfil-form-group mt-3">
             <label>Nombre:</label>
             <input type="text" value={user.name} disabled />
           </div>
@@ -77,18 +103,55 @@ function UserProfile() {
             </select>
           </div>
 
-          <button
-            type="button"
-            className="perfil-save-button"
-            onClick={handleSave}
-          >
+          <button type="button" className="perfil-save-button" onClick={handleSaveProfile}>
             Guardar Cambios
           </button>
         </form>
+
+        {/* Sección del formulario de cambio de contraseña */}
+        <div className="perfil-password">
+          <h5>Cambiar Contraseña</h5>
+          <form className="perfil-form mt-3">
+            <div className="perfil-form-group">
+              <label>Contraseña Actual:</label>
+              <input
+                type="password"
+                name="currentPassword"
+                value={password.currentPassword}
+                onChange={handlePasswordChange}
+              />
+            </div>
+
+            <div className="perfil-form-group">
+              <label>Nueva Contraseña:</label>
+              <input
+                type="password"
+                name="newPassword"
+                value={password.newPassword}
+                onChange={handlePasswordChange}
+              />
+            </div>
+
+            <div className="perfil-form-group">
+              <label>Confirmar Nueva Contraseña:</label>
+              <input
+                type="password"
+                name="confirmPassword"
+                value={password.confirmPassword}
+                onChange={handlePasswordChange}
+              />
+            </div>
+
+            <button type="button" className="perfil-save-button mt-2" onClick={handleSavePassword}>
+              Cambiar Contraseña
+            </button>
+          </form>
+        </div>
       </div>
-      <Footer />
+    </div>
+          <Footer />
     </>
   );
 }
 
-export default UserProfile;
+export default Perfil;

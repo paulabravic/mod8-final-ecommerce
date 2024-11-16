@@ -560,7 +560,7 @@ h6 {
 /**                 MI PERFIL                  **/
 /************************************************/
 .perfil-container {
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f4f4f4;
@@ -572,9 +572,18 @@ h6 {
   margin-bottom: 20px;
 }
 
-.perfil-form {
+.perfil-content {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px; /* Espacio entre las columnas */
+}
+
+.perfil-form, .perfil-password {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .perfil-form-group {
@@ -605,10 +614,16 @@ h6 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: 100%;
 }
 
 .perfil-save-button:hover {
   background-color: #138496;
 }
 
-
+/* Responsivo: Las dos columnas se apilan verticalmente en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .perfil-content {
+    flex-direction: column;
+  }
+}
