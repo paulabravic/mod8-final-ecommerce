@@ -3,7 +3,7 @@
     "desc": "Collar de nylon resistente, ajustable, disponible en colores vibrantes. Ideal para perros pequeños y medianos.",
     "id": "P001",
     "img": "/assets/img-cards/collar-perro-metal-azul-cielo.jpg",
-    "ingredients": ["Nylon resistente", "Ajustable", "Colores vibrantes", "Tamaño S y M"],
+    "ingredients": ["Nylon resistente", "Ajustable"],
     "name": "Belanova",
     "price": 15950
   },
@@ -11,7 +11,7 @@
     "desc": "Collar acolchado, resistente al agua, flexible y perfecto para mantener a tu perro cómodo en climas fríos.",
     "id": "P002",
     "img": "/assets/img-cards/collar-perro-metal-dorado.jpg",
-    "ingredients": ["Acolchado", "Resistente al agua", "Flexible", "Ideal para clima frío"],
+    "ingredients": ["Acolchado", "Resistente al agua"],
     "name": "Winter",
     "price": 12250
   },
@@ -19,7 +19,7 @@
     "desc": "Elegante collar de cuero de alta calidad, robusto y duradero, ideal para perros que necesitan un toque de estilo.",
     "id": "P003",
     "img": "/assets/img-cards/collar-perro-moni-beige.jpg",
-    "ingredients": ["Cuero de alta calidad", "Robusto", "Duradero", "Diseño elegante"],
+    "ingredients": ["Cuero de alta calidad", "Robusto"],
     "name": "Luna",
     "price": 13990
   },
@@ -27,7 +27,7 @@
     "desc": "Collar suave con cristales brillantes, perfecto para perros pequeños, disponible en colores pastel.",
     "id": "P004",
     "img": "/assets/img-cards/collar-perro-moni-gris.jpg",
-    "ingredients": ["Suave", "Con cristales", "Para perros pequeños", "Colores pastel"],
+    "ingredients": ["Suave", "Con cristales"],
     "name": "Titán",
     "price": 12590
   },
@@ -35,7 +35,7 @@
     "desc": "Collar reflectante y ajustable, resistente y ideal para perros activos que disfrutan de la aventura.",
     "id": "P005",
     "img": "/assets/img-cards/collar-perro-moni-rosa.jpg",
-    "ingredients": ["Reflectante", "Ajustable", "Resistente", "Para perros activos"],
+    "ingredients": ["Reflectante", "Ajustable"],
     "name": "Golden",
     "price": 16450
   },
@@ -43,7 +43,7 @@
     "desc": "Moderno y acolchado collar para perros de tamaño mediano y grande, cómodo para el uso diario.",
     "id": "P006",
     "img": "/assets/img-cards/collar-perro-nara-azul.jpg",
-    "ingredients": ["Moderno", "Acolchado", "Cómodo", "Tamaño M y L"],
+    "ingredients": ["Moderno", "Acolchado"],
     "name": "Simba",
     "price": 15500
   },
@@ -51,7 +51,7 @@
     "desc": "Collar de alta resistencia para perros grandes, con cierre de seguridad y colores oscuros.",
     "id": "P007",
     "img": "/assets/img-cards/collar-perro-nara-lila-.jpg",
-    "ingredients": ["Alta resistencia", "Para perros grandes", "Cierre de seguridad", "Colores oscuros"],
+    "ingredients": ["Alta resistencia", "Para perros grandes"],
     "name": "Nova",
     "price": 12950
   },
@@ -59,7 +59,7 @@
     "desc": "Collar suave y ligero, ajustable, con un diseño divertido para perros de todos los tamaños.",
     "id": "P008",
     "img": "/assets/img-cards/collar-perro-metal-rosa-.jpg",
-    "ingredients": ["Suave", "Ligero", "Ajustable", "Diseño divertido"],
+    "ingredients": ["Suave", "Ligero"],
     "name": "Labrador",
     "price": 6890
   }

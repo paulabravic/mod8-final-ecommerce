@@ -13,15 +13,9 @@ const Footer = () => {
             </h5>
             <ul className="list-unstyled">
               <li>
-                <Link to="/faq" className="text-white">
-                  Preguntas frecuentes
-                </Link>
+                <strong>Teléfono:</strong>
               </li>
-              <li>
-                <Link to="/ayuda" className="text-white">
-                  Centro de Ayuda
-                </Link>
-              </li>
+              <li>+56 2 2225 5555 </li>
             </ul>
           </div>
 

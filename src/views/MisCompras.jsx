@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Titulo from "../components/Titulo";
 import Footer from "../components/Footer";
+import { formatoNumero } from "../utils/formatoNumero";
 import "../index.css";
 
 // Simulación de compras (mock data)
@@ -9,7 +10,7 @@ const mockCompras = [
   {
     id: 1,
     cliente: "Juan Pérez",
-    fechaPago: "2024-11-11",
+    fechaPago: "11/11/2024",
     estado: "Pagado",
     productos: [
       {
@@ -29,7 +30,7 @@ const mockCompras = [
   {
     id: 2,
     cliente: "Ana Gómez",
-    fechaPago: "2024-11-12",
+    fechaPago: "12/11/2024",
     estado: "Enviado",
     productos: [
       {
@@ -49,7 +50,7 @@ const mockCompras = [
   {
     id: 3,
     cliente: "Carlos Díaz",
-    fechaPago: "2024-11-13",
+    fechaPago: "13/11/2024",
     estado: "Pendiente",
     productos: [
       {
@@ -92,7 +93,7 @@ function MisCompras() {
                       <span className="mis-compras-producto-nombre">{producto.nombre}</span>
                       <span className="mis-compras-producto-cantidad">Cantidad: {producto.cantidad}</span>
                       <span className="mis-compras-producto-precio">
-                        Precio: ${(producto.precio * producto.cantidad / 100).toFixed(2)}
+                        Precio: ${formatoNumero(producto.precio * producto.cantidad)} 
                       </span>
                     </div>
                   ))}

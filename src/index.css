@@ -427,6 +427,20 @@ select.registro_input {
   background-color: #a43f5e;
 }
 
+.admin_form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin_form-column {
+  width: 48%; /* Ajusta este valor según el espaciado que prefieras */
+}
+
+.admin_form-column input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 
 
 
