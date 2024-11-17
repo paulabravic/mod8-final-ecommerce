@@ -2,11 +2,22 @@ import React, { useContext } from "react";
 import { CollaresContext } from "../context/CollaresProvider";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 import { formatoNumero } from "../utils/formatoNumero";
 
 export const Carrito = () => {
   const { carrito, total, addCarrito, subtractCarrito } =
     useContext(CollaresContext);
+    const navigate = useNavigate();
+
+    const handlePagar = () => {
+      if(carrito.length === 0){
+        window.alert("No tienes productos en el carrito, anímate, elige uno 😀.");
+      }
+      else{
+        navigate(`/pago`);
+      }
+    };
 
   return (
     <>
@@ -59,7 +70,7 @@ export const Carrito = () => {
           <h4 className="fw-bold py-3">Total ${formatoNumero(total)}</h4>
           <button
             className="btn btn-success"
-            onClick={() => alert("¡Gracias por preferirnos! :)")}
+            onClick={handlePagar}
           >
             Ir a Pagar
           </button>

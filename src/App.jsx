@@ -4,6 +4,7 @@ import Home from "./views/Home.jsx";
 import { Carrito } from "./views/Carrito.jsx";
 import { Login } from "./views/Login.jsx";
 import { Registro } from "./views/Registro.jsx";
+import { Pago } from "./views/Pago.jsx";
 import Favorito from "./views/Favorito.jsx";
 import MisCompras from "./views/MisCompras.jsx";
 import Perfil from "./views/Perfil.jsx";
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="favorito" element={<Favorito />} />
         <Route path="mis-compras" element={<MisCompras />} />
         <Route path="perfil" element={<Perfil />} />
+        <Route path="pago" element={<Pago />} />
         <Route path="/" element={<Home />} />
       </Routes>
 
