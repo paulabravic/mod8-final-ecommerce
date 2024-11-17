@@ -8,7 +8,7 @@ import CollaresProvider from "./context/CollaresProvider";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter basename="/collares-bruno">
+    <BrowserRouter>
       <CollaresProvider>
         <App />
       </CollaresProvider>

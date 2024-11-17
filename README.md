@@ -7,5 +7,10 @@
 </ul>
 
 <h4 align="left">
-:link: Url: <a href="https://github.com/paulabravic/mod8-final-ecommerce">https://github.com/paulabravic/mod8-final-ecommerce</a>
+:link: Url: <a href="https://collares-bruno.vercel.app/">https://collares-bruno.vercel.app/</a>
 </h4>
+
+<ul>
+  <li>Admin user: admin@bruno.cl</li>
+  <li>Admin pass: Admin9876*</li>
+</ul>
