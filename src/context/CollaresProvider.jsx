@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { ENDPOINT } from "../utils/constants";
 
 export const CollaresContext = createContext();
 
@@ -13,10 +14,15 @@ const CollaresProvider = ({ children }) => {
   }, []);
 
   const getCollares = async () => {
-    const res = await fetch("collares.json");
-    const collaresRes = await res.json();
-    setCollares(collaresRes);
+    try {
+      const res = await fetch(ENDPOINT.products);
+      const collaresRes = await res.json();
+      setCollares(collaresRes);
+    } catch (error) {
+      console.error("Error al obtener productos:", error);
+    }
   };
+
 
   const addCarrito = (id, name, price, img) => {
     const producto = { id, name, price, img, count: 1 };
@@ -51,9 +57,6 @@ const CollaresProvider = ({ children }) => {
     setTotal(totalCarrito);
   }
 
-  // const setLoginOk = (loggedIn) => {
-  //   if(loggedIn > 0) 
-  // }
 
   return (
     <CollaresContext.Provider value={{ collares, setCollares, carrito, setCarrito, total, setTotal, addCarrito, subtractCarrito, isLoggedIn, setIsLoggedIn }}>

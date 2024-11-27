@@ -1,20 +1,21 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
-import { CollaresContext } from "../context/CollaresProvider";
+import { ENDPOINT } from "../utils/constants"; 
+import axios from "axios";
 import "../index.css";
-
-//setIsLoggedIn
+import { CollaresContext } from "../context/CollaresProvider"; 
+import jwt_decode from 'jwt-decode';
 
 export const Login = () => {
-  const { setIsLoggedIn } = useContext(CollaresContext);
+  const { setIsLoggedIn } = useContext(CollaresContext); // Accede al estado del contexto
   const navigate = useNavigate();
 
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
   const modelLogin = { email: "", password: "" };
 
-  const handleClickLogin = (e) => {
+  const handleClickLogin = async (e) => {
     e.preventDefault();
 
     modelLogin.email = email.value.trim();
@@ -28,47 +29,32 @@ export const Login = () => {
       return window.alert("El formato del email no es correcto!");
     }
 
-    //Data de prueba mientras se integra a backend
+    try {
+      // Realiza la petición al backend para el login
+      const response = await axios.post(ENDPOINT.login, modelLogin); 
 
-    if (
-      modelLogin.email == "admin@bruno.cl" &&
-      modelLogin.password == "Admin9876*"
-    ) {
-      //window.sessionStorage.setItem('token', data.token)
+      // Guarda el token en el almacenamiento local
+      localStorage.setItem('token', response.data.token); 
+
+      // Decodifica el token JWT
+      const decodedToken = jwt_decode(response.data.token);
+
+      // Almacena la información del usuario en el localStorage
+      localStorage.setItem('userData', JSON.stringify(decodedToken));
+
       window.alert("Usuario identificado con éxito 😀.");
-      setIsLoggedIn(1); //Usuario Admin
-      navigate(`/admin-producto`);
 
-      // axios
-      //   .post(ENDPOINT.login, modelLogin)
-      //   .then(({ data }) => {
-      //     //window.sessionStorage.setItem('token', data.token)
-      //     window.alert("Usuario identificado con éxito 😀.");
-      //     setIsLoggedIn(1);
-      //     navigate(`/`);
-      //   })
-      //   .catch(({ response: { data } }) => {
-      //     console.error(data);
-      //     window.alert(`${data.message} 🙁.`);
-      //   });
-    } else {
-      // Obtener los usuarios almacenados en localStorage
-      const usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
-
-      // Validar si existe en localStorage
-      const usuarioExistente = usuarios.find(
-        (usuario) =>
-          usuario.email === modelLogin.email &&
-          usuario.password === modelLogin.password
-      );
-      if (usuarioExistente) {
-        //window.sessionStorage.setItem('token', data.token)
-        window.alert("Usuario identificado con éxito 😀.");
-        setIsLoggedIn(2); //Usuario normal
-        navigate(`/`);
+      // Determina el tipo de usuario basado en el rol decodificado
+      if (decodedToken.rol === 'administrador') {
+        setIsLoggedIn(1); // Usuario Admin
+        navigate(`/admin-producto`);
       } else {
-        window.alert(`No existe usuario con el email y password ingresado 🙁.`);
+        setIsLoggedIn(2); // Usuario normal
+        navigate(`/`); 
       }
+    } catch (error) {
+      console.error(error);
+      window.alert("Error en el inicio de sesión 🙁.");
     }
   };
 
@@ -107,11 +93,8 @@ export const Login = () => {
               >
                 Iniciar Sesión
               </button>
-              {/* <button type="button" className="login_backButton" 
-                      onClick={() => { navigate(`/registro`); }}>
-                Registrarse
-              </button> */}
             </div>
+
           </form>
         </div>
       </div>

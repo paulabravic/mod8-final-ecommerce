@@ -2,22 +2,24 @@ import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
+import { ENDPOINT } from "../utils/constants";
+import axios from "axios";
 import "../index.css";
 
 export const Registro = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [nombres, setNombres] = useState("");
-  const [address, setAddress] = useState("");  // Nuevo estado
-  const [city, setCity] = useState("");        // Nuevo estado
-  const [country, setCountry] = useState("Chile"); // Nuevo estado con valor predeterminado
+  const [address, setAddress] = useState("");  
+  const [city, setCity] = useState("");        
+  const [country, setCountry] = useState("Chile"); // Estado con valor predeterminado
   const [error, setError] = useState("");
   const [errorAnim, setErrorAnim] = useState(false); 
   const navigate = useNavigate();
 
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-  const handleClickRegistro = (e) => {
+  const handleClickRegistro = async (e) => {
     e.preventDefault();
     setError("");
     setErrorAnim(false);
@@ -41,26 +43,27 @@ export const Registro = () => {
       return;
     }
 
-    // Obtener los usuarios almacenados en localStorage
-    const usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
+    // Construir el objeto con los datos del usuario
+    const nuevoUsuario = { 
+      nombre: nombres,
+      email: email,
+      password: password,
+      direccion: address,
+      ciudad: city,
+      pais: country
+    };
 
-    // Validar si el email ya existe
-    const usuarioExistente = usuarios.find((usuario) => usuario.email === email);
-    if (usuarioExistente) {
-      setError("El email ya está registrado.");
-      setErrorAnim(true);
-      return;
+    try {
+      // Enviar la solicitud POST al backend
+      const response = await axios.post(ENDPOINT.users, nuevoUsuario); 
+      console.log("Respuesta del servidor:", response.data);
+      alert("Usuario registrado exitosamente! 😀");
+      navigate(`/login`);
+    } catch (error) {
+      console.error("Error al registrar usuario:", error);
+      alert(`Error al registrar: ${error.response.data.message}`); 
     }
 
-    // Guardar el nuevo usuario en el array
-    const nuevoUsuario = { email, password, nombres, address, city, country };
-    usuarios.push(nuevoUsuario);
-
-    // Guardar los usuarios actualizados en localStorage
-    localStorage.setItem("usuarios", JSON.stringify(usuarios));
-
-    alert("Usuario registrado exitosamente! 😀");
-    navigate(`/login`);
   };
 
   return (

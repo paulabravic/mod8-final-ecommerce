@@ -22,9 +22,9 @@ const Card = () => {
               </p>
 
               <ul>
-                {collar.ingredients.map((ingredient, i) => (
-                  <li className="card-nowrap-li" key={i}>&#x1F9B4; {ingredient}</li>
-                ))}
+                <li className="card-nowrap-li">&#x1F9B4; Talla: {collar.talla}</li>
+                <li className="card-nowrap-li">&#x1F9B4; Color: {collar.color}</li>
+                <li className="card-nowrap-li">&#x1F9B4; Stock: {collar.stock}</li> 
               </ul>
             </div>
             

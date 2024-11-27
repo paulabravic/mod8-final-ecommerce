@@ -1,3 +1,3 @@
 export const formatoNumero = (price) => {
-  return price.toLocaleString("de-DE");
+  return Number(price).toLocaleString("de-DE");
 };

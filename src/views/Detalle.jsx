@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { CollaresContext } from "../context/CollaresProvider";
+import { formatoNumero } from "../utils/formatoNumero.js";
 
 const Detalle = () => {
   const [collarDetail, setCollarDetail] = useState({});
@@ -11,15 +12,12 @@ const Detalle = () => {
 
   const navigate = useNavigate();
 
-  const obtenerDatos = () => {
-    const datosCollar = collares.find((collar) => collar.id === id);
-
-    setCollarDetail(datosCollar || {});
-  };
-
   useEffect(() => {
-    obtenerDatos();
-  }, [collares]);
+    // Buscar el producto que coincida con el ID
+    const productoEncontrado = collares.find((collar) => collar.id === parseInt(id));
+    setCollarDetail(productoEncontrado || {});
+  }, [collares, id]);
+
 
   return (
     <>
@@ -43,12 +41,12 @@ const Detalle = () => {
                 <p className="card-text">{collarDetail.desc}</p>
                 <h6>Características:</h6>
                 <ul>
-                  {collarDetail.ingredients?.map((ingredient, i) => (
-                    <li key={i}>&#x1F9B4; {ingredient}</li>
-                  ))}
+                  <li>&#x1F9B4; Talla: {collarDetail.talla}</li>
+                  <li>&#x1F9B4; Color: {collarDetail.color}</li>
+                  <li>&#x1F9B4; Stock: {collarDetail.stock}</li>
                 </ul>
                 <div className="d-flex justify-content-around">
-                  <h4>Precio: ${collarDetail.price}</h4>
+                  <h4>Precio: ${formatoNumero(collarDetail.price)}</h4>
                   <button
                     className="btn btn-danger"
                     onClick={() => {
