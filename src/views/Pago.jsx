@@ -2,7 +2,10 @@ import React, { useState, useContext } from "react";
 import { CollaresContext } from "../context/CollaresProvider";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 import { formatoNumero } from "../utils/formatoNumero";
+import axios from "axios";
+import { ENDPOINT } from "../utils/constants"; 
 
 export const Pago = () => {
   const { carrito, total, addCarrito, subtractCarrito } = useContext(CollaresContext);
@@ -11,14 +14,73 @@ export const Pago = () => {
   const [vencimiento, setVencimiento] = useState("");
   const [ccv, setCcv] = useState("");
   const [direccion, setDireccion] = useState("Calle Alameda 123, Santiago, Chile");
+  const navigate = useNavigate();
 
-  const handlePago = () => {
+  const handlePago = async () => {
+
     if(carrito.length === 0){
-        window.alert("No tienes productos en el carrito, anímate, elige uno 😀.");
-      }
-      else{
-        alert("¡Pago realizado con éxito!");
-      }
+      window.alert("No tienes productos en el carrito, anímate, elige uno 😀.");
+      return;
+    }
+
+    // Validaciones del formulario
+    if (!numeroTarjeta || !vencimiento || !ccv) {
+      alert("Por favor, completa todos los campos del formulario.");
+      return;
+    }
+
+    // Validación del número de tarjeta (ejemplo simple)
+    if (numeroTarjeta.length < 5 || isNaN(numeroTarjeta)) {
+      alert("Número de tarjeta inválido.");
+      return;
+    }
+
+    // Validación de la fecha de vencimiento (ejemplo simple)
+    const [mes, anio] = vencimiento.split("/");
+    if (
+      mes < 1 ||
+      mes > 12 ||
+      anio.length !== 2 ||
+      isNaN(anio)
+    ) {
+      alert("Fecha de vencimiento inválida.");
+      return;
+    }
+
+    // Validación del CCV (ejemplo simple)
+    if (ccv.length < 3 || ccv.length > 4 || isNaN(ccv)) {
+      alert("CCV inválido.");
+      return;
+    }
+
+    try {
+      const datosPago = {
+        metodoPago,
+        numeroTarjeta,
+        vencimiento,
+        ccv,
+        direccion,
+        total,
+        carrito, // Agrega el carrito al payload
+      };
+
+      await axios.post(ENDPOINT.pago, datosPago, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          alert("¡Pago realizado con éxito! 😀");
+          navigate("/"); 
+        } else {
+          alert("Error al procesar el pago.");
+        }
+      });
+    } catch (error) {
+      console.error("Error al procesar el pago:", error);
+      alert("Error al procesar el pago.");
+    }
   };
 
   return (
