@@ -3,76 +3,99 @@ import Navbar from "../components/Navbar";
 import Titulo from "../components/Titulo";
 import Footer from "../components/Footer";
 import "../index.css";
-
-// Simulación de productos
-const mockData = [
-  {
-    id: 1,
-    name: "Collar Belanova",
-    price: 15950,
-    description: "Nylon resistente, ajustable",
-    size: "M",
-    color: "Rojo",
-  },
-  {
-    id: 2,
-    name: "Collar Winter",
-    price: 12250,
-    description: "Acolchado, resistente al agua",
-    size: "L",
-    color: "Azul",
-  },
-  {
-    id: 3,
-    name: "Collar Luna",
-    price: 13990,
-    description: "Cuero de alta calidad",
-    size: "S",
-    color: "Negro",
-  },
-  {
-    id: 4,
-    name: "Collar Titán",
-    price: 12590,
-    description: "Suave, con cristales",
-    size: "XL",
-    color: "Blanco",
-  },
-];
+import axios from "axios"; 
+import { ENDPOINT } from "../utils/constants";
 
 function AdminProducto() {
-  const [products, setProducts] = useState(mockData);
+  const [products, setProducts] = useState([]); 
   const [newProduct, setNewProduct] = useState({
     name: "",
     price: "",
-    description: "",
-    size: "",
+    desc: "",
+    talla: "",
     color: "",
   });
   const [editMode, setEditMode] = useState(false);
   const [editProduct, setEditProduct] = useState(null);
 
-  const handleAddProduct = () => {
-    setProducts([...products, { id: products.length + 1, ...newProduct }]);
-    setNewProduct({ name: "", price: "", description: "", size: "", color: "" });
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const response = await axios.get(ENDPOINT.products); 
+        setProducts(response.data); 
+      } catch (error) {
+        console.error("Error al obtener productos:", error);
+      }
+    };
+  
+    getProducts(); 
+  }, []); 
+
+
+  const handleAddProduct = async () => {
+    try {
+      await axios.post(ENDPOINT.products, newProduct, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      })
+      .then((response) => {
+        // Actualizar el estado de productos con el nuevo producto
+        setProducts([...products, response.data]); 
+  
+        // Ahora sí, limpiar el estado newProduct después de agregar el producto
+        setNewProduct({ name: "", price: "", desc: "", talla: "", color: "" });
+
+        window.alert("Producto creado 😀.");
+      });
+    } catch (error) {
+      console.error("Error al agregar producto:", error);
+      window.alert("Error al agregar producto 🙁.");
+    }
+  };
+
+
+  const handleSaveEdit = async () => {
+    try {
+      await axios.put(`${ENDPOINT.products}/${editProduct.id}`, editProduct, { 
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+  
+      const updatedProducts = products.map((product) =>
+        product.id === editProduct.id ? editProduct : product
+      );
+      setProducts(updatedProducts);
+      setEditMode(false);
+      setEditProduct(null);
+      window.alert("Producto modificado 😀.");
+    } catch (error) {
+      console.error("Error al editar producto:", error);
+      window.alert("Error al editar producto 🙁.");
+    }
   };
 
   const handleEditProduct = (product) => {
-    setEditProduct(product);
+    setEditProduct({ ...product }); // Copiar el producto para evitar mutaciones directas
     setEditMode(true);
   };
 
-  const handleSaveEdit = () => {
-    const updatedProducts = products.map((product) =>
-      product.id === editProduct.id ? editProduct : product
-    );
-    setProducts(updatedProducts);
-    setEditMode(false);
-    setEditProduct(null);
-  };
+  const handleDeleteProduct = async (id) => {
+    try {
+      await axios.delete(`${ENDPOINT.products}/${id}`, { 
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
 
-  const handleDeleteProduct = (id) => {
-    setProducts(products.filter((product) => product.id !== id));
+      setProducts(products.filter((product) => product.id !== id));
+      window.alert("Producto eliminado 😀.");
+    } catch (error) {
+      console.error("Error al eliminar producto:", error);
+      window.alert("Error al eliminar producto 🙁.");
+    }
   };
 
   return (
@@ -85,14 +108,16 @@ function AdminProducto() {
           <div className="admin_form-row">
             {/* Primer columna: Nombre, Precio, Descripción */}
             <div className="admin_form-column">
-              <input
+              <input 
                 type="text"
                 value={editMode ? editProduct.name : newProduct.name}
-                onChange={(e) =>
-                  editMode
-                    ? setEditProduct({ ...editProduct, name: e.target.value })
-                    : setNewProduct({ ...newProduct, name: e.target.value })
-                }
+                onChange={(e) => {
+                  if (editMode) {
+                    setEditProduct({ ...editProduct, name: e.target.value });
+                  } else {
+                    setNewProduct({ ...newProduct, name: e.target.value });
+                  }
+                }}
                 placeholder="Nombre del producto"
               />
               <input
@@ -107,14 +132,14 @@ function AdminProducto() {
               />
               <input
                 type="text"
-                value={editMode ? editProduct.description : newProduct.description}
+                value={editMode ? editProduct.desc : newProduct.desc}
                 onChange={(e) =>
                   editMode
                     ? setEditProduct({
                         ...editProduct,
-                        description: e.target.value,
+                        desc: e.target.value,
                       })
-                    : setNewProduct({ ...newProduct, description: e.target.value })
+                    : setNewProduct({ ...newProduct, desc: e.target.value })
                 }
                 placeholder="Descripción"
               />
@@ -124,11 +149,11 @@ function AdminProducto() {
             <div className="admin_form-column">
               <input
                 type="text"
-                value={editMode ? editProduct.size : newProduct.size}
+                value={editMode ? editProduct.talla : newProduct.talla}
                 onChange={(e) =>
                   editMode
-                    ? setEditProduct({ ...editProduct, size: e.target.value })
-                    : setNewProduct({ ...newProduct, size: e.target.value })
+                    ? setEditProduct({ ...editProduct, talla: e.target.value })
+                    : setNewProduct({ ...newProduct, talla: e.target.value })
                 }
                 placeholder="Talla"
               />
@@ -156,7 +181,7 @@ function AdminProducto() {
               <tr>
                 <th>Nombre</th>
                 <th>Precio</th>
-                <th>Descripción</th>
+                <th className="w-25">Descripción</th>
                 <th>Talla</th>
                 <th>Color</th>
                 <th>Acciones</th>
@@ -167,8 +192,8 @@ function AdminProducto() {
                 <tr key={product.id}>
                   <td>{product.name}</td>
                   <td>${product.price}</td>
-                  <td>{product.description}</td>
-                  <td>{product.size}</td>
+                  <td>{product.desc}</td>
+                  <td>{product.talla}</td>
                   <td>{product.color}</td>
                   <td>
                     <button onClick={() => handleEditProduct(product)}>Editar</button>
