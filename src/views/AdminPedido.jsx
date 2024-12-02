@@ -1,40 +1,63 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Navbar from "../components/Navbar";
 import Titulo from "../components/Titulo";
 import Footer from "../components/Footer";
+import { ENDPOINT } from "../utils/constants"; 
 import "../index.css";
-
-// Simulación de pedidos
-const mockPedidos = [
-  {
-    id: 1,
-    cliente: "Juan Pérez",
-    fecha: "2024-11-10",
-    estado: "Pendiente",
-  },
-  {
-    id: 2,
-    cliente: "Ana Gómez",
-    fecha: "2024-11-11",
-    estado: "Enviado",
-  },
-  {
-    id: 3,
-    cliente: "Carlos Díaz",
-    fecha: "2024-11-12",
-    estado: "Pendiente",
-  },
-];
+import axios from "axios"; 
 
 function AdminPedido() {
-  const [pedidos, setPedidos] = useState(mockPedidos);
-  const [editPedido, setEditPedido] = useState(null);
+  const [pedidos, setPedidos] = useState([]);
+  const selectRefs = useRef({}); // Referencias para los elementos select
 
-  const handleEditEstado = (id, nuevoEstado) => {
-    const updatedPedidos = pedidos.map((pedido) =>
-      pedido.id === id ? { ...pedido, estado: nuevoEstado } : pedido
+  useEffect(() => {
+    const obtenerPedidos = async () => {
+      try {
+        const response = await axios.get(ENDPOINT.pago, { // Ajusta la ruta si es necesario
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
+        });
+        setPedidos(response.data);
+      } catch (error) {
+        console.error("Error al obtener la lista de pedidos:", error);
+        // Manejo de errores, por ejemplo, mostrar un mensaje al usuario
+      }
+    };
+    obtenerPedidos();
+  }, []);
+
+  const handleEditEstado = async (id) => {
+    // Obtener el nuevo estado del select correspondiente al ID del pedido
+    const nuevoEstado = selectRefs.current[id].value;
+
+    try {
+      await axios.put(
+        `${ENDPOINT.pago}/${id}`,
+        { estado: nuevoEstado },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+
+      // Actualizar el estado local
+      const pedidosActualizados = pedidos.map((pedido) =>
+        pedido.pago_id === id ? { ...pedido, estado: nuevoEstado } : pedido
+      );
+      setPedidos(pedidosActualizados);
+    } catch (error) {
+      console.error("Error al actualizar el estado del pedido:", error);
+      // Manejo de errores
+    }
+  };
+
+  const handleSelectChange = (id, nuevoEstado) => {
+    const pedidosActualizados = pedidos.map((pedido) =>
+      pedido.pago_id === id ? { ...pedido, estado_pago: nuevoEstado } : pedido
     );
-    setPedidos(updatedPedidos);
+    setPedidos(pedidosActualizados);
   };
 
   return (
@@ -45,41 +68,44 @@ function AdminPedido() {
         <div className="admin-pedido-list mt-2">
           <h5>Lista de Pedidos</h5>
           <table>
-            <thead>
-              <tr>
-                <th>Cliente</th>
-                <th>Fecha</th>
-                <th>Estado</th>
-                <th>Acciones</th>
+          <thead>
+            <tr>
+              <th>Pedido</th>
+              <th>Fecha</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pedidos.map((pedido) => (
+              <tr key={pedido.pago_id}>
+                <td>{pedido.pago_id}</td>
+                <td>{pedido.fecha_pago}</td> 
+                <td>
+                  <select
+                    id="estado_pago"
+                    name="estado_pago"
+                    value={pedido.estado_pago}
+                    ref={(ref) => (selectRefs.current[pedido.pago_id] = ref)} 
+                    onChange={(e) => handleSelectChange(pedido.pago_id, e.target.value)}
+                    className="admin-pedido-select"
+                  >
+                    <option value="completado">Completado</option>
+                    <option value="pendiente">Pendiente</option>
+                  </select>
+                </td>
+                <td>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => handleEditEstado(pedido.pago_id)} 
+                  >
+                    Guardar Estado
+                  </button>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {pedidos.map((pedido) => (
-                <tr key={pedido.id}>
-                  <td>{pedido.cliente}</td>
-                  <td>{pedido.fecha}</td>
-                  <td>
-                    <select
-                      value={pedido.estado}
-                      onChange={(e) =>
-                        handleEditEstado(pedido.id, e.target.value)
-                      }
-                      className="admin-pedido-select"
-                    >
-                      <option value="Pendiente">Pendiente</option>
-                      <option value="Enviado">Enviado</option>
-                      <option value="Entregado">Entregado</option>
-                    </select>
-                  </td>
-                  <td>
-                    <button onClick={() => handleEditEstado(pedido.id)}>
-                      Guardar Estado
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+            ))}
+          </tbody>
+        </table>
         </div>
       </div>
       <Footer />

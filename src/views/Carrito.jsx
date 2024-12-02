@@ -6,16 +6,20 @@ import { useNavigate } from "react-router-dom";
 import { formatoNumero } from "../utils/formatoNumero";
 
 export const Carrito = () => {
-  const { carrito, total, addCarrito, subtractCarrito } =
+  const { carrito, total, addCarrito, subtractCarrito, isLoggedIn } =
     useContext(CollaresContext);
     const navigate = useNavigate();
 
     const handlePagar = () => {
-      if(carrito.length === 0){
+      if (carrito.length === 0) {
         window.alert("No tienes productos en el carrito, anímate, elige uno 😀.");
-      }
-      else{
-        navigate(`/pago`);
+      } else {
+        // Verificar si el usuario ha iniciado sesión
+        if (isLoggedIn) { 
+          navigate(`/pago`); 
+        } else {
+          navigate(`/login`); 
+        }
       }
     };
 

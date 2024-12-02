@@ -1,16 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect,useContext } from "react";
+import { CollaresContext } from "../context/CollaresProvider";
 import Navbar from "../components/Navbar";
 import Titulo from "../components/Titulo";
 import Footer from "../components/Footer";
 import "../index.css";
+import axios from "axios";
+import { ENDPOINT } from "../utils/constants";
 
 function Perfil() {
+  const { setIsLoggedIn } = useContext(CollaresContext); 
   const [user, setUser] = useState({
-    name: "Juan Pérez",
-    email: "juan.perez@example.com",
-    address: "Calle Alameda 123",
-    city: "Santiago",
-    country: "Chile",
+    nombre: "",
+    email: "",
+    direccion: "",
+    ciudad: "",
+    pais: "",
   });
 
   const [password, setPassword] = useState({
@@ -18,6 +22,41 @@ function Perfil() {
     newPassword: "",
     confirmPassword: ""
   });
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        const response = await axios.get(ENDPOINT.users, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        // Ajusta los nombres de los campos según la respuesta del backend
+        setUser({
+          nombre: response.data.nombre, 
+          email: response.data.email, 
+          direccion: response.data.direccion, 
+          ciudad: response.data.ciudad, 
+          pais: response.data.pais 
+        }); 
+
+      } catch (error) {
+        console.error("Error al obtener datos del usuario:", error);
+        // Manejar el error, por ejemplo, redirigiendo al usuario a la página de inicio de sesión
+        if (error.response.status === 401) {
+          setIsLoggedIn(0);
+          localStorage.removeItem('token');
+          localStorage.removeItem('userData');
+          window.alert("Token inválido o expirado. Por favor, inicia sesión nuevamente.");
+          window.location.href = '/login';
+        }
+      }
+    };
+
+    fetchUserData();
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -35,121 +74,153 @@ function Perfil() {
     }));
   };
 
-  const handleSaveProfile = () => {
-    alert("Cambios guardados");
-    // Aquí puedes agregar la lógica para guardar los cambios del perfil
+  const handleSaveProfile = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      await axios.put(ENDPOINT.users, user, { // Asumiendo que el endpoint para actualizar es el mismo que para obtener
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      alert("Cambios guardados");
+    } catch (error) {
+      console.error("Error al guardar perfil:", error);
+      alert("Error al guardar los cambios.");
+    }
   };
 
-  const handleSavePassword = () => {
+  const handleSavePassword = async () => {
     if (password.newPassword !== password.confirmPassword) {
       alert("Las contraseñas no coinciden");
     } else {
-      alert("Contraseña cambiada con éxito");
-      // Aquí agregarías la lógica para cambiar la contraseña
+      try {
+        const token = localStorage.getItem('token');
+        // Aquí se necesita agregar la lógica para enviar la nueva contraseña al backend
+        // usando una petición PUT o PATCH a un endpoint específico para cambiar contraseña
+        // Ejemplo:
+        // await axios.patch(ENDPOINT.cambiarPassword, { password: password.newPassword }, {
+        //   headers: {
+        //     Authorization: `Bearer ${token}`,
+        //   },
+        // });
+        alert("Contraseña cambiada con éxito"); 
+      } catch (error) {
+        console.error("Error al cambiar contraseña:", error);
+        alert("Error al cambiar la contraseña.");
+      }
     }
   };
 
   return (
-      <>
+    <>
       <Navbar />
       <Titulo titulo="Mi Perfil" />
-    <div className="perfil-container mb-5">
-      {/* <h2>Perfil de Usuario</h2> */}
-      <div className="perfil-content">
-        {/* Sección del perfil */}
-       
-        <form className="perfil-form">
-        <h5>Mis Datos</h5>
-          <div className="perfil-form-group mt-3">
-            <label>Nombre:</label>
-            <input type="text" value={user.name} disabled />
-          </div>
-
-          <div className="perfil-form-group">
-            <label>Email:</label>
-            <input type="email" value={user.email} disabled />
-          </div>
-
-          <div className="perfil-form-group">
-            <label>Dirección:</label>
-            <input
-              type="text"
-              name="address"
-              value={user.address}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className="perfil-form-group">
-            <label>Ciudad:</label>
-            <input
-              type="text"
-              name="city"
-              value={user.city}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className="perfil-form-group">
-            <label>País:</label>
-            <select
-              name="country"
-              value={user.country}
-              onChange={handleInputChange}
-            >
-              <option value="Chile">Chile</option>
-              <option value="Perú">Perú</option>
-              <option value="Argentina">Argentina</option>
-            </select>
-          </div>
-
-          <button type="button" className="perfil-save-button" onClick={handleSaveProfile}>
-            Guardar Cambios
-          </button>
-        </form>
-
-        {/* Sección del formulario de cambio de contraseña */}
-        <div className="perfil-password">
-          <h5>Cambiar Contraseña</h5>
-          <form className="perfil-form mt-3">
+      <div className="container perfil-container">
+        
+        <div className="perfil-content">
+          {/* Sección del perfil */}
+          <div className="perfil-form">
+            <h3>Mis Datos</h3>
             <div className="perfil-form-group">
-              <label>Contraseña Actual:</label>
-              <input
-                type="password"
-                name="currentPassword"
-                value={password.currentPassword}
+              <label htmlFor="nombre">Nombre:</label>
+              <input 
+                type="text"
+                id="nombre"
+                name="nombre"
+                value={user.nombre}
+                onChange={handleInputChange}
+                disabled 
+              />
+            </div>
+            <div className="perfil-form-group">
+              <label htmlFor="email">Email:</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                value={user.email} 
+                onChange={handleInputChange}
+                disabled 
+              />
+            </div>
+            <div className="perfil-form-group">
+              <label htmlFor="direccion">Dirección:</label>
+              <input 
+                type="text"
+                id="direccion" 
+                name="direccion" 
+                value={user.direccion} 
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="perfil-form-group">
+              <label htmlFor="ciudad">Ciudad:</label>
+              <input 
+                type="text" 
+                id="ciudad" 
+                name="ciudad" 
+                value={user.ciudad} 
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="perfil-form-group">
+              <label htmlFor="pais">País:</label>
+              <select 
+                id="pais" 
+                name="pais" 
+                value={user.pais} 
+                onChange={handleInputChange}
+              >
+                <option value="Chile">Chile</option>
+                <option value="Perú">Perú</option>
+                <option value="Argentina">Argentina</option>
+              </select>
+            </div>
+            <button className="perfil-save-button" onClick={handleSaveProfile}>
+              Guardar Cambios
+            </button>
+          </div>
+
+          {/* Sección del formulario de cambio de contraseña */}
+          <div className="perfil-password">
+            <h3>Cambiar Contraseña</h3>
+            <div className="perfil-form-group">
+              <label htmlFor="currentPassword">Contraseña Actual:</label>
+              <input 
+                type="password" 
+                id="currentPassword" 
+                name="currentPassword" 
+                value={password.currentPassword} 
                 onChange={handlePasswordChange}
               />
             </div>
-
             <div className="perfil-form-group">
-              <label>Nueva Contraseña:</label>
-              <input
-                type="password"
-                name="newPassword"
-                value={password.newPassword}
+              <label htmlFor="newPassword">Nueva Contraseña:</label>
+              <input 
+                type="password" 
+                id="newPassword" 
+                name="newPassword" 
+                value={password.newPassword} 
                 onChange={handlePasswordChange}
               />
             </div>
-
             <div className="perfil-form-group">
-              <label>Confirmar Nueva Contraseña:</label>
-              <input
+              <label htmlFor="confirmPassword">Confirmar Nueva Contraseña:</label>
+              <input 
                 type="password"
-                name="confirmPassword"
-                value={password.confirmPassword}
+                id="confirmPassword" 
+                name="confirmPassword" 
+                value={password.confirmPassword} 
                 onChange={handlePasswordChange}
               />
             </div>
-
-            <button type="button" className="perfil-save-button mt-2" onClick={handleSavePassword}>
+            <button className="perfil-save-button" onClick={handleSavePassword}>
               Cambiar Contraseña
             </button>
-          </form>
+          </div>
         </div>
       </div>
-    </div>
-          <Footer />
+      <Footer />
     </>
   );
 }
