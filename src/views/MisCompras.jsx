@@ -65,7 +65,7 @@ function MisCompras() {
                 </div>
               ))
             ) : (
-              <p>No hay compras registradas.</p>
+              <p>No tienes pagos aún.</p>
             )
           )}
         </div>

@@ -433,7 +433,7 @@ select.registro_input {
 }
 
 .admin_form-column {
-  width: 48%; /* Ajusta este valor según el espaciado que prefieras */
+  width: 48%;
 }
 
 .admin_form-column input {
@@ -446,6 +446,10 @@ select.registro_input {
   gap: 2px;
 }
 
+.admin_btn_favoritos {
+  display: inline-flex;
+  gap: 5px;
+}
 
 
 
