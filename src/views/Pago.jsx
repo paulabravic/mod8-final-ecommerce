@@ -97,7 +97,7 @@ export const Pago = () => {
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="div-carrito-collar">
                       <img
-                        src={cart.img}
+                        src={cart.imagen}
                         alt={cart.name}
                         className="img-collar-mini"
                       />
@@ -117,7 +117,7 @@ export const Pago = () => {
                       <button
                         className="btn btn-primary"
                         onClick={() =>
-                          addCarrito(cart.id, cart.name, cart.price, cart.img)
+                          addCarrito(cart.id, cart.name, cart.price, cart.imagen)
                         }
                       >
                         +

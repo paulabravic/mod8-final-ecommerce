@@ -34,7 +34,7 @@ export const Carrito = () => {
               <div className="d-flex justify-content-between align-items-center">
                 <div className="div-carrito-collar">
                   <img
-                    src={cart.img}
+                    src={cart.imagen}
                     alt={cart.name}
                     className="img-collar-mini"
                   />

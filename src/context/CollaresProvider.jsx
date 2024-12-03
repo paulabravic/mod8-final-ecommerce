@@ -24,8 +24,8 @@ const CollaresProvider = ({ children }) => {
   };
 
 
-  const addCarrito = (id, name, price, img) => {
-    const producto = { id, name, price, img, count: 1 };
+  const addCarrito = (id, name, price, imagen) => {
+    const producto = { id, name, price, imagen, count: 1 };
     const indiceCollares = carrito.findIndex((collar) => collar.id === id);
     if (indiceCollares >= 0) {
       carrito[indiceCollares].count++;

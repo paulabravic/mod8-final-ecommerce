@@ -27,7 +27,7 @@ const Detalle = () => {
           <div className="row g-0">
             <div className="col-md-6">
               <img
-                src={collarDetail.img}
+                src={collarDetail.imagen}
                 className="img-fluid estilos rounded-start"
                 alt={collarDetail.name}
               />
@@ -50,7 +50,7 @@ const Detalle = () => {
                   <button
                     className="btn btn-danger"
                     onClick={() => {
-                      addCarrito(collarDetail.id,collarDetail.name,collarDetail.price,collarDetail.img);
+                      addCarrito(collarDetail.id,collarDetail.name,collarDetail.price,collarDetail.imagen);
                       navigate(`/carrito`);}
                     }
                   >

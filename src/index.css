@@ -441,6 +441,10 @@ select.registro_input {
   margin-bottom: 10px;
 }
 
+#tdAdminProduct {
+  display: inline-flex;
+  gap: 2px;
+}
 
 
 
