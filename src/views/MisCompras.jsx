@@ -38,8 +38,8 @@ function MisCompras() {
             <div key={compra.pago_id} className="mis-compras-pedido">
               <div className="mis-compras-pedido-header">
                 <h5 className="mis-compras-pedido-id">Pedido ID: {compra.pedido_id}</h5>
-                <p>Fecha del Pago: {compra.fecha_pago}</p>
-                <p>Estado del Pago: {compra.estado_pago}</p>
+                <p><span className="fw-bold">Fecha del Pago:</span> {compra.fecha_pago}</p>
+                <p><span className="fw-bold">Estado del Pago:</span> {compra.estado_pago}</p>
                 <p className="mis-compras-pedido-total">Total del Pago: ${formatoNumero(compra.total_pago)}</p>
               </div>
               <h6>Productos:</h6>
