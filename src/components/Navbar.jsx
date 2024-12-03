@@ -4,12 +4,17 @@ import { CollaresContext } from "../context/CollaresProvider";
 import { formatoNumero } from "../utils/formatoNumero";
 
 const Navbar = () => {
-  const { total, isLoggedIn, setIsLoggedIn } = useContext(CollaresContext);
+  const { total, isLoggedIn, setIsLoggedIn, setCarrito, setTotal } = useContext(CollaresContext);
   const navigate = useNavigate();
 
   const handleClickCerrarSesion = (e) => {
     e.preventDefault(); 
+    setCarrito([]); // Limpiar el carrito
+    setTotal(0); // Actualizar el total
+    localStorage.removeItem('token'); // Eliminar token del localStorage
+    localStorage.removeItem('userData');
     setIsLoggedIn(0);
+    window.alert("Gracias por visitarnos, vuelve pronto!");
     navigate(`/`);
   };
 

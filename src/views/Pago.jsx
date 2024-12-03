@@ -8,7 +8,7 @@ import axios from "axios";
 import { ENDPOINT } from "../utils/constants"; 
 
 export const Pago = () => {
-  const { carrito, total, addCarrito, subtractCarrito } = useContext(CollaresContext);
+  const { carrito, total, addCarrito, subtractCarrito, setCarrito, setTotal } = useContext(CollaresContext);
   const [metodoPago, setMetodoPago] = useState("debito");
   const [numeroTarjeta, setNumeroTarjeta] = useState("");
   const [vencimiento, setVencimiento] = useState("");
@@ -72,6 +72,8 @@ export const Pago = () => {
       .then((response) => {
         if (response.status === 200) {
           alert("¡Pago realizado con éxito! 😀");
+          setCarrito([]); // Limpiar el carrito
+          setTotal(0); // Actualizar el total
           navigate("/"); 
         } else {
           alert("Error al procesar el pago.");

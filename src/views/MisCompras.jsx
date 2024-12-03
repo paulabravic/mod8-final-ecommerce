@@ -32,10 +32,10 @@ function MisCompras() {
       <Navbar /> 
       <Titulo titulo="Mis Compras" />
       <div className="container mis-compras-container mt-5">
-        <h1>Mis Compras</h1>
+        {/* <h1>Mis Compras</h1> */}
         <div className="mis-compras-list">
           {compras.map((compra) => (
-            <div key={compra.pago_id} className="mis-compras-pedido">
+            <div key={compra.pago_id} className="mis-compras-pedido border border-1 border-secondary">
               <div className="mis-compras-pedido-header">
                 <h5 className="mis-compras-pedido-id">Pedido ID: {compra.pedido_id}</h5>
                 <p><span className="fw-bold">Fecha del Pago:</span> {compra.fecha_pago}</p>
