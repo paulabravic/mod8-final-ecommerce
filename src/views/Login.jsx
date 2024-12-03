@@ -94,7 +94,7 @@ export const Login = () => {
                 Iniciar Sesión
               </button>
 
-              <a href="/recuperar-pass" className="pt-2 text-white">
+              <a href="#" className="pt-2 text-white">
                 Recuperar contraseña
               </a>
             </div>
